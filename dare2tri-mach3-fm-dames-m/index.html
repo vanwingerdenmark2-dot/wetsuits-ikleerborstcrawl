@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dare 2 Tri Mach 3 FM — Dames maat M | Wetsuits IkLeerBorstcrawl</title>
+  <meta name="description" content="2dehands Dare 2 Tri Mach 3 FM dameswetsuit, ouder model, maat M, vrijwel nieuw. €169.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a2942;
+      background: #f6f9fc;
+      line-height: 1.55;
+    }
+    a { color: #0a6cb1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6eaf0;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .crumbs { font-size: 14px; color: #6b7d97; }
+    .crumbs a { color: #6b7d97; }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    /* Foto-disclaimer alert — prominent bovenaan */
+    .photo-alert {
+      background: #fff8e1;
+      border: 1px solid #f0d573;
+      border-left: 4px solid #c79100;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .photo-alert-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #c79100;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .photo-alert-content { font-size: 14px; line-height: 1.55; color: #5a4400; }
+    .photo-alert-content strong { color: #3a2a00; display: block; margin-bottom: 4px; font-size: 15px; }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+    @media (max-width: 800px) { .hero { grid-template-columns: 1fr; } }
+
+    .gallery { display: flex; flex-direction: column; gap: 12px; }
+
+    .gallery .main {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(20,40,80,0.08);
+      background: #fff;
+      overflow: hidden;
+    }
+    .gallery .main img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .photo-overlay-warn {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(199, 145, 0, 0.95);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid #e6eaf0;
+      border-radius: 50%;
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a2942;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(20,40,80,0.12);
+      transition: background 0.15s, transform 0.1s;
+      user-select: none;
+    }
+    .nav-btn:hover { background: #fff; transform: translateY(-50%) scale(1.05); }
+    .nav-btn.prev { left: 12px; }
+    .nav-btn.next { right: 12px; }
+    .counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(26,41,66,0.85);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .gallery-thumbs { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .gallery-thumbs > div {
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(20,40,80,0.06);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .gallery-thumbs > div:hover { transform: scale(1.04); }
+    .gallery-thumbs > div.active { border-color: #0a6cb1; }
+    .gallery-thumbs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info h1 {
+      font-size: 28px;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .info .sub {
+      color: #6b7d97;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .badge.green { background: #e6f3ec; color: #1f7a3f; }
+    .badge.blue { background: #e6f0fb; color: #0a4d8f; }
+    .badge.amber { background: #fdf3e0; color: #8a5a05; }
+    .badge.gold { background: #fff2c2; color: #7a5a00; border: 1px solid #f0d573; }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 22px;
+      margin-top: 8px;
+    }
+    .price-koop {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .price-koop .now { font-size: 34px; font-weight: 700; color: #1a2942; }
+    .extras-line { color: #4a5a76; font-size: 14px; margin-bottom: 18px; }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta:hover { background: #1ea854; text-decoration: none; }
+    .cta-sub { text-align: center; color: #6b7d97; font-size: 13px; margin-top: 10px; }
+
+    .rent-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+    .rent-table td { text-align: left; padding: 8px 0; border-bottom: 1px solid #f0f3f7; }
+    .rent-table td.price { font-weight: 700; text-align: right; }
+
+    .size-link {
+      margin-top: 18px;
+      padding: 14px 16px;
+      background: #f0f6fc;
+      border-left: 3px solid #0a6cb1;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #1a2942;
+      line-height: 1.55;
+    }
+    .size-link strong { display: block; margin-bottom: 4px; }
+
+    section { margin-top: 48px; }
+    section h2 { font-size: 22px; margin-bottom: 14px; letter-spacing: -0.01em; }
+    section p { margin-bottom: 12px; }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 0;
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .specs-grid > div { padding: 12px 18px; border-bottom: 1px solid #f0f3f7; }
+    .specs-grid > div.label { color: #6b7d97; font-size: 14px; }
+    .specs-grid > div.value { font-weight: 500; }
+    .specs-grid > div:nth-last-child(-n+2) { border-bottom: none; }
+    .specs-grid > div.value.highlight { color: #7a5a00; font-weight: 700; }
+    .specs-grid > div.value.unknown { color: #8e9bb1; font-style: italic; font-weight: 400; }
+
+    .conditie-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 20px; }
+    .conditie-card ul { padding-left: 18px; }
+    .conditie-card li { margin-bottom: 6px; }
+
+    .klasse-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+    @media (max-width: 700px) { .klasse-grid { grid-template-columns: 1fr; } }
+    .klasse-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 10px; padding: 18px; position: relative; }
+    .klasse-card.active { border-color: #f0d573; background: #fffbe9; }
+    .klasse-letter {
+      display: inline-block; background: #1a2942; color: #fff;
+      width: 28px; height: 28px; border-radius: 50%; text-align: center;
+      line-height: 28px; font-weight: 700; font-size: 14px; margin-bottom: 8px;
+    }
+    .klasse-card.active .klasse-letter { background: #c79100; }
+    .klasse-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .klasse-desc { font-size: 13px; color: #4a5a76; line-height: 1.5; }
+    .klasse-card.active::before {
+      content: "Dit pak"; position: absolute; top: -10px; right: 14px;
+      background: #c79100; color: #fff; font-size: 11px; font-weight: 700;
+      padding: 3px 9px; border-radius: 999px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .extra-info {
+      margin-top: 14px; padding: 14px 16px; background: #f0f6fc;
+      border-left: 3px solid #0a6cb1; border-radius: 4px; font-size: 14px; color: #1a2942;
+    }
+
+    .voorwaarden { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 20px; }
+    .voorwaarden ul { padding-left: 18px; margin-top: 8px; }
+    .voorwaarden li { margin-bottom: 8px; }
+    .voorwaarden strong { color: #1a2942; }
+
+    .credits {
+      margin-top: 48px; padding: 20px; background: #f0f3f7; border-radius: 8px;
+      font-size: 12px; color: #6b7d97; line-height: 1.6;
+    }
+    .credits strong { color: #4a5a76; }
+    .credits a { color: #6b7d97; text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid #e6eaf0; background: #fff;
+      padding: 24px; color: #6b7d97; font-size: 13px; text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="crumbs">
+    <a href="../index.html">2dehands wetsuits</a>
+    &nbsp;›&nbsp; Dare 2 Tri Mach 3 FM — Dames M
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- BELANGRIJK: foto-disclaimer prominent bovenaan -->
+  <div class="photo-alert">
+    <div class="photo-alert-icon">!</div>
+    <div class="photo-alert-content">
+      <strong>Let op: foto's tonen een nieuwer Mach 3-model — niet dit specifieke pak</strong>
+      Dit is een <strong>ouder Dare 2 Tri Mach 3 FM</strong>-model. De afbeeldingen op deze pagina zijn officiële Dare2Tri-marketingfoto's van de huidige Mach 3-lijn. <strong>Het werkelijke pak ziet er anders uit</strong> (andere kleur-accenten, eenvoudiger ontwerp dan op de foto's). Wil je foto's van het werkelijke exemplaar zien? Stuur ons een berichtje op WhatsApp en je krijgt direct foto's van het echte pak.
+    </div>
+  </div>
+
+  <div class="hero">
+
+    <div class="gallery">
+      <div class="main">
+        <span class="photo-overlay-warn">Voorbeeldfoto Mach 3-lijn</span>
+        <button class="nav-btn prev" aria-label="Vorige foto" onclick="navFoto(-1)">‹</button>
+        <img id="mainImage" src="fotos/d2t-mach3-fullbody-2.jpg" alt="Dare2Tri Mach3-lijn voorbeeldfoto">
+        <button class="nav-btn next" aria-label="Volgende foto" onclick="navFoto(1)">›</button>
+        <div class="counter"><span id="counterCurrent">1</span> / <span id="counterTotal">7</span></div>
+      </div>
+      <div class="gallery-thumbs" id="thumbsContainer">
+        <div data-src="fotos/d2t-mach3-fullbody-2.jpg" data-alt="Voorkant model" class="active">
+          <img src="fotos/d2t-mach3-fullbody-2.jpg" alt="Voorkant model">
+        </div>
+        <div data-src="fotos/d2t-mach3-fullbody-1.jpg" data-alt="Model voorkant detail">
+          <img src="fotos/d2t-mach3-fullbody-1.jpg" alt="Voorkant model">
+        </div>
+        <div data-src="fotos/d2t-mach3-back.jpg" data-alt="Achterkant mannequin (Mach 3-lijn)">
+          <img src="fotos/d2t-mach3-back.jpg" alt="Achterkant mannequin">
+        </div>
+        <div data-src="fotos/d2t-mach3-side.jpg" data-alt="Zijaanzicht mannequin (Mach 3-lijn)">
+          <img src="fotos/d2t-mach3-side.jpg" alt="Zijaanzicht mannequin">
+        </div>
+        <div data-src="fotos/d2t-mach3-fullbody-3.jpg" data-alt="Model fullbody">
+          <img src="fotos/d2t-mach3-fullbody-3.jpg" alt="Model fullbody">
+        </div>
+        <div data-src="fotos/d2t-mach3-detail-top.jpg" data-alt="Close-up rits (Mach 3-lijn)">
+          <img src="fotos/d2t-mach3-detail-top.jpg" alt="Close-up rits">
+        </div>
+        <div data-src="fotos/d2t-banner-action.jpg" data-alt="Dare2Tri-merkbeeld">
+          <img src="fotos/d2t-banner-action.jpg" alt="Dare2Tri-merkbeeld">
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1>Dare 2 Tri Mach 3 FM — Dames maat M</h1>
+      <div class="sub">Triathlon / open-water full-suit · Ouder Mach 3-model (FM-variant)</div>
+
+      <div class="badges">
+        <span class="badge gold">Topstaat (A)</span>
+        <span class="badge green">Vrijwel nieuw</span>
+        <span class="badge green">Geen beschadigingen</span>
+        <span class="badge blue">Geen reparaties</span>
+        <span class="badge amber">Ouder model</span>
+      </div>
+
+      <div class="price-card">
+
+        <div class="price-koop">
+          <span class="now">€&nbsp;169</span>
+        </div>
+        <div class="extras-line">
+          Geïmporteerd door Sport Import Europe BV (Nederlandse importeur)
+        </div>
+
+        <a class="cta"
+           href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20interesse%20in%20de%20Dare%202%20Tri%20Mach%203%20FM%20dames%20maat%20M%20-%20kun%20je%20me%20foto%27s%20van%20het%20werkelijke%20pak%20sturen%3F">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Vraag foto's van het werkelijke pak
+        </a>
+        <div class="cta-sub">Je opent WhatsApp met een voorgevuld bericht</div>
+
+      </div>
+
+      <div style="margin-top: 28px;">
+        <h3 style="font-size: 15px; color: #4a5a76; margin-bottom: 8px;">Liever dit wetsuit huren?</h3>
+        <table class="rent-table">
+          <tbody>
+            <tr><td>1 dag</td><td class="price">€ 15</td></tr>
+            <tr><td>Weekend (vr-ma)</td><td class="price">€ 30</td></tr>
+            <tr><td>Midweek (ma-vr)</td><td class="price">€ 45</td></tr>
+            <tr><td>Hele week</td><td class="price">€ 65</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="size-link">
+        <strong>Twijfel je over de maat?</strong>
+        Bekijk de officiële
+        <a href="https://www.dare2tri.com/pages/size-chart" target="_blank" rel="noopener">Dare2Tri maattabel (heren &amp; dames)</a>
+        voor exacte afmetingen per maat.
+      </div>
+
+    </div>
+
+  </div>
+
+  <section>
+    <h2>Over dit pak</h2>
+    <p>Dit is een <strong>oudere Mach 3 FM</strong>-versie van het Nederlandse triathlon-merk <strong>Dare 2 Tri</strong>. Het pak hoort bij de Mach 3-lijn, geïmporteerd door Sport Import Europe BV. De huidige Mach 3-modellen op de markt (zoals de Mach3 0.7 en S.7) zijn opvolgers met geavanceerdere features — dit FM-model is eenvoudiger in opzet en daardoor ook lichter geprijsd op de 2dehands-markt.</p>
+    <p>De Mach 3-lijn is bedoeld voor triatleten en open-water-zwemmers. Voor dit specifieke pak: het verkeert in vrijwel nieuwe staat — geen gebruikssporen, geen beschadigingen, geen reparaties.</p>
+    <p><strong>Belangrijk:</strong> we hebben geen officiële productfoto's of specificatie-fiche van dit specifieke FM-model meer kunnen vinden online. De foto's hierboven zijn van een nieuwer Mach 3-model. Voor een eerlijk beeld van het pak: vraag via WhatsApp om foto's van het werkelijke exemplaar voordat je beslist.</p>
+  </section>
+
+  <section>
+    <h2>Conditie</h2>
+    <div class="conditie-card">
+      <ul>
+        <li><strong>Conditie-klasse: Topstaat (A)</strong> — vrijwel als nieuw</li>
+        <li><strong>Vrijwel nieuw</strong>: geen gebruikssporen</li>
+        <li><strong>Geen beschadigingen</strong>, geen scheuren, geen reparaties</li>
+        <li>Geïmporteerd door Sport Import Europe BV (Nederlandse importeur)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Specs</h2>
+    <div class="specs-grid">
+      <div class="label">Conditie-klasse</div>
+      <div class="value highlight">Topstaat (A)</div>
+
+      <div class="label">Merk</div>
+      <div class="value">Dare 2 Tri</div>
+
+      <div class="label">Model</div>
+      <div class="value">Mach 3 FM (ouder model)</div>
+
+      <div class="label">Type</div>
+      <div class="value">Triathlon / open-water full-suit</div>
+
+      <div class="label">Maat</div>
+      <div class="value">M (dames) &nbsp;·&nbsp; <a href="https://www.dare2tri.com/pages/size-chart" target="_blank" rel="noopener" style="font-size: 13px; font-weight: 500;">bekijk maattabel Dare2Tri</a></div>
+
+      <div class="label">Importeur</div>
+      <div class="value">Sport Import Europe BV (NL)</div>
+
+      <div class="label">Neopreen-dikte (per zone)</div>
+      <div class="value unknown">Specificaties oudere FM-model niet meer beschikbaar online — vraag bij interesse via WhatsApp</div>
+
+      <div class="label">Specifieke technologie</div>
+      <div class="value unknown">Onbekend voor deze oudere FM-variant</div>
+
+      <div class="label">Oorspronkelijke nieuwprijs</div>
+      <div class="value unknown">Onbekend — huidige Mach 3 0.7 ligt op €440, oudere FM-modellen lager</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wat betekent "tweedehands"?</h2>
+    <p>Alle wetsuits in de IkLeerBorstcrawl-shop zijn tweedehands. We delen ze in drie klassen in zodat je vooraf weet wat je mag verwachten:</p>
+
+    <div class="klasse-grid">
+
+      <div class="klasse-card active">
+        <span class="klasse-letter">A</span>
+        <div class="klasse-name">Topstaat</div>
+        <div class="klasse-desc">Gebruikt maar vrijwel als nieuw. Hooguit 1 of 2 kleine nagelscheurtjes, geen grote reparaties. Voor wie de hoogste kwaliteit wil voor ver onder nieuwprijs.</div>
+      </div>
+
+      <div class="klasse-card">
+        <span class="klasse-letter">B</span>
+        <div class="klasse-name">Middenklasse</div>
+        <div class="klasse-desc">Maximaal 1 of 2 kleine, professioneel uitgevoerde reparaties. Doet niets af aan de kwaliteit en gebruikswaarde — perfect te gebruiken net als een nieuw wetsuit.</div>
+      </div>
+
+      <div class="klasse-card">
+        <span class="klasse-letter">C</span>
+        <div class="klasse-name">Voordeelklasse</div>
+        <div class="klasse-desc">Duidelijk gebruikt, meerdere zichtbare reparaties. Nog steeds een volwaardig pak om mee te zwemmen of trainen — alleen voor een veel voordeligere prijs.</div>
+      </div>
+
+    </div>
+
+    <div class="extra-info">
+      <strong>Reparatie-recht bij koop:</strong> bij aankoop heb je het recht dat eventuele grotere scheurtjes (anders dan hele kleine nagelscheurtjes) eerst worden gerepareerd voordat je het pak meeneemt. Voor klasse A komt dit in de praktijk niet voor — voor B en C gebeurt dit op verzoek.
+    </div>
+  </section>
+
+  <section>
+    <h2>Garantie en restitutie</h2>
+    <div class="voorwaarden">
+      <ul>
+        <li><strong>Geen garantie</strong> bij tweedehands wetsuits — dat is inherent aan een 2dehands-aankoop.</li>
+        <li><strong>Vooraf bekijken kan altijd.</strong> Je kunt het pak komen passen of bezichtigen voordat je beslist. Voor dit ouder FM-model is dat extra aan te raden, omdat de online foto's niet het exacte pak tonen.</li>
+        <li><strong>Vraag gerust foto's van het werkelijke pak of meer informatie.</strong> De afbeeldingen op deze pagina zijn voorbeeldfoto's van de Mach 3-lijn — niet van dit specifieke FM-exemplaar. Stuur een berichtje, dan stuur ik je beelden van het echte pak.</li>
+        <li><strong>Eenmaal gekocht is gekocht.</strong> Geen restitutie achteraf.</li>
+        <li><strong>Twijfel je?</strong> Huur het pak dan eerst (de huurprijzen staan bovenaan op deze pagina) en beslis daarna of je het wilt kopen. Zo ben je 100% zeker.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Vragen?</h2>
+    <p>Stuur een berichtje op WhatsApp en we reageren doorgaans binnen een paar uur. Voor dit pak raden we sterk aan eerst foto's van het werkelijke exemplaar op te vragen.</p>
+    <a class="cta" style="max-width: 360px;"
+       href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20interesse%20in%20de%20Dare%202%20Tri%20Mach%203%20FM%20dames%20maat%20M%20-%20kun%20je%20me%20foto%27s%20van%20het%20werkelijke%20pak%20sturen%3F">
+      WhatsApp ons
+    </a>
+  </section>
+
+  <div class="credits">
+    <strong>Foto-bronnen en disclaimer</strong><br>
+    De foto's op deze pagina zijn officiële Dare2Tri-marketingbeelden van de huidige Mach 3-lijn — niet van dit specifieke 2dehands-exemplaar. Het verkochte pak is een oudere Mach 3 FM-variant en ziet er anders uit. © Dare2Tri / Sport Import Europe BV — gebruikt voor merkpresentatie van een 2dehands Dare 2 Tri Mach 3 FM wetsuit aangeboden door <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>.
+    <ul style="margin-left: 20px; margin-top: 6px;">
+      <li>Productshots (mannequin back/side + model fullbody) van de huidige Mach 3 0.7-lijn: <a href="https://www.dare2tri.com/products/womens-mach3-0-7">dare2tri.com (Womens MACH3 0.7)</a></li>
+      <li>Sfeerbeeld nieuwe collectie: <a href="https://www.dare2tri.com/">dare2tri.com homepage banner</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  Onderdeel van <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>
+  · 2dehands wetsuits voor klanten
+</footer>
+
+<script>
+  (function() {
+    const thumbs = Array.from(document.querySelectorAll('#thumbsContainer > div'));
+    const mainImg = document.getElementById('mainImage');
+    const counterEl = document.getElementById('counterCurrent');
+    const totalEl = document.getElementById('counterTotal');
+    let current = 0;
+    totalEl.textContent = thumbs.length;
+
+    function show(idx) {
+      current = (idx + thumbs.length) % thumbs.length;
+      const t = thumbs[current];
+      mainImg.src = t.dataset.src;
+      mainImg.alt = t.dataset.alt || '';
+      counterEl.textContent = current + 1;
+      thumbs.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    window.navFoto = function(delta) { show(current + delta); };
+
+    thumbs.forEach((t, i) => {
+      t.addEventListener('click', function() { show(i); });
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft')  { show(current - 1); }
+      if (e.key === 'ArrowRight') { show(current + 1); }
+    });
+  })();
+</script>
+
+</body>
+</html>

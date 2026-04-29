@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROKA Maverick MX Gen.I — Dames maat M | Wetsuits IkLeerBorstcrawl</title>
+  <meta name="description" content="2dehands ROKA Maverick MX Gen.I dameswetsuit, maat M, vrijwel nieuw, geen beschadigingen. €269. Maximum buoyancy, ARMS-UP™ design.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a2942;
+      background: #f6f9fc;
+      line-height: 1.55;
+    }
+    a { color: #0a6cb1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6eaf0;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .crumbs { font-size: 14px; color: #6b7d97; }
+    .crumbs a { color: #6b7d97; }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+    @media (max-width: 800px) { .hero { grid-template-columns: 1fr; } }
+
+    .gallery { display: flex; flex-direction: column; gap: 12px; }
+
+    .gallery .main {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(20,40,80,0.08);
+      background: #fff;
+      overflow: hidden;
+    }
+    .gallery .main img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid #e6eaf0;
+      border-radius: 50%;
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a2942;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(20,40,80,0.12);
+      transition: background 0.15s, transform 0.1s;
+      user-select: none;
+    }
+    .nav-btn:hover { background: #fff; transform: translateY(-50%) scale(1.05); }
+    .nav-btn.prev { left: 12px; }
+    .nav-btn.next { right: 12px; }
+    .counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(26,41,66,0.85);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .gallery-thumbs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+    .gallery-thumbs > div {
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(20,40,80,0.06);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .gallery-thumbs > div:hover { transform: scale(1.04); }
+    .gallery-thumbs > div.active { border-color: #0a6cb1; }
+    .gallery-thumbs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info h1 { font-size: 28px; letter-spacing: -0.01em; margin-bottom: 6px; }
+    .info .sub { color: #6b7d97; font-size: 15px; margin-bottom: 18px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+    .badge {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .badge.green { background: #e6f3ec; color: #1f7a3f; }
+    .badge.blue { background: #e6f0fb; color: #0a4d8f; }
+    .badge.amber { background: #fdf3e0; color: #8a5a05; }
+    .badge.gold { background: #fff2c2; color: #7a5a00; border: 1px solid #f0d573; }
+
+    .price-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 22px; margin-top: 8px; }
+    .price-koop { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+    .price-koop .now { font-size: 34px; font-weight: 700; color: #1a2942; }
+    .price-koop .was { text-decoration: line-through; color: #8e9bb1; font-size: 16px; }
+    .price-koop .save { background: #fff2c2; color: #8a5a05; font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .extras-line { color: #4a5a76; font-size: 14px; margin-bottom: 18px; }
+
+    .cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; background: #25D366; color: #fff;
+      padding: 14px 22px; border-radius: 8px;
+      font-size: 16px; font-weight: 600; text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta:hover { background: #1ea854; text-decoration: none; }
+    .cta-sub { text-align: center; color: #6b7d97; font-size: 13px; margin-top: 10px; }
+
+    .rent-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+    .rent-table td { text-align: left; padding: 8px 0; border-bottom: 1px solid #f0f3f7; }
+    .rent-table td.price { font-weight: 700; text-align: right; }
+
+    .size-link {
+      margin-top: 18px; padding: 14px 16px;
+      background: #f0f6fc; border-left: 3px solid #0a6cb1; border-radius: 4px;
+      font-size: 14px; color: #1a2942; line-height: 1.55;
+    }
+    .size-link strong { display: block; margin-bottom: 4px; }
+
+    section { margin-top: 48px; }
+    section h2 { font-size: 22px; margin-bottom: 14px; letter-spacing: -0.01em; }
+    section p { margin-bottom: 12px; }
+
+    .specs-grid {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 0;
+      background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; overflow: hidden;
+    }
+    .specs-grid > div { padding: 12px 18px; border-bottom: 1px solid #f0f3f7; }
+    .specs-grid > div.label { color: #6b7d97; font-size: 14px; }
+    .specs-grid > div.value { font-weight: 500; }
+    .specs-grid > div:nth-last-child(-n+2) { border-bottom: none; }
+    .specs-grid > div.value.highlight { color: #7a5a00; font-weight: 700; }
+
+    /* Technologie-sectie: 2x2 grid met patented features */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    @media (max-width: 700px) { .tech-grid { grid-template-columns: 1fr; } }
+    .tech-card {
+      background: #1a2942;
+      color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .tech-card .tech-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0a1525;
+      overflow: hidden;
+    }
+    .tech-card .tech-img img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .tech-card-body { padding: 16px 18px 18px; }
+    .tech-patented {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #1a2942;
+      background: #4ad9c6;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .tech-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+    .tech-card .tech-sub {
+      font-size: 12px;
+      color: #4ad9c6;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .tech-card p { font-size: 13px; color: #c8d2e6; line-height: 1.55; margin: 0; }
+
+    .conditie-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 20px; }
+    .conditie-card ul { padding-left: 18px; }
+    .conditie-card li { margin-bottom: 6px; }
+
+    .klasse-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+    @media (max-width: 700px) { .klasse-grid { grid-template-columns: 1fr; } }
+    .klasse-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 10px; padding: 18px; position: relative; }
+    .klasse-card.active { border-color: #f0d573; background: #fffbe9; }
+    .klasse-letter {
+      display: inline-block; background: #1a2942; color: #fff;
+      width: 28px; height: 28px; border-radius: 50%; text-align: center;
+      line-height: 28px; font-weight: 700; font-size: 14px; margin-bottom: 8px;
+    }
+    .klasse-card.active .klasse-letter { background: #c79100; }
+    .klasse-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .klasse-desc { font-size: 13px; color: #4a5a76; line-height: 1.5; }
+    .klasse-card.active::before {
+      content: "Dit pak"; position: absolute; top: -10px; right: 14px;
+      background: #c79100; color: #fff; font-size: 11px; font-weight: 700;
+      padding: 3px 9px; border-radius: 999px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .extra-info {
+      margin-top: 14px; padding: 14px 16px; background: #f0f6fc;
+      border-left: 3px solid #0a6cb1; border-radius: 4px; font-size: 14px; color: #1a2942;
+    }
+
+    .voorwaarden { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 20px; }
+    .voorwaarden ul { padding-left: 18px; margin-top: 8px; }
+    .voorwaarden li { margin-bottom: 8px; }
+    .voorwaarden strong { color: #1a2942; }
+
+    .credits {
+      margin-top: 48px; padding: 20px; background: #f0f3f7; border-radius: 8px;
+      font-size: 12px; color: #6b7d97; line-height: 1.6;
+    }
+    .credits strong { color: #4a5a76; }
+    .credits a { color: #6b7d97; text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid #e6eaf0; background: #fff;
+      padding: 24px; color: #6b7d97; font-size: 13px; text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="crumbs">
+    <a href="../index.html">2dehands wetsuits</a>
+    &nbsp;›&nbsp; ROKA Maverick MX Gen.I — Dames M
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+
+    <div class="gallery">
+      <div class="main">
+        <button class="nav-btn prev" aria-label="Vorige foto" onclick="navFoto(-1)">‹</button>
+        <img id="mainImage" src="fotos/roka-mx-front.jpg" alt="ROKA Maverick MX Gen.I voorkant">
+        <button class="nav-btn next" aria-label="Volgende foto" onclick="navFoto(1)">›</button>
+        <div class="counter"><span id="counterCurrent">1</span> / <span id="counterTotal">12</span></div>
+      </div>
+      <div class="gallery-thumbs" id="thumbsContainer">
+        <div data-src="fotos/roka-mx-front.jpg" data-alt="Voorkant mannequin (Gen.I turquoise)" class="active">
+          <img src="fotos/roka-mx-front.jpg" alt="Voorkant">
+        </div>
+        <div data-src="fotos/roka-mx-back.jpg" data-alt="Achterkant mannequin (Gen.I turquoise)">
+          <img src="fotos/roka-mx-back.jpg" alt="Achterkant">
+        </div>
+        <div data-src="fotos/roka-mx-armsup-detail.jpg" data-alt="ARMS-UP design demo (turquoise dameseditie)">
+          <img src="fotos/roka-mx-armsup-detail.jpg" alt="ARMS-UP detail">
+        </div>
+        <div data-src="fotos/roka-mx-buoyancy-detail.jpg" data-alt="RSX Technology buoyancy panel close-up">
+          <img src="fotos/roka-mx-buoyancy-detail.jpg" alt="RSX Technology">
+        </div>
+        <div data-src="fotos/roka-mx-armsup-slice.jpg" data-alt="ARMS-UP body silhouet demo">
+          <img src="fotos/roka-mx-armsup-slice.jpg" alt="Arms-up demo">
+        </div>
+        <div data-src="fotos/roka-mx-hero-women.jpg" data-alt="Detail-foto pak-paneel">
+          <img src="fotos/roka-mx-hero-women.jpg" alt="Pak detail">
+        </div>
+        <div data-src="fotos/roka-mx-neoprene-detail.jpg" data-alt="Neopreen close-up">
+          <img src="fotos/roka-mx-neoprene-detail.jpg" alt="Neopreen detail">
+        </div>
+        <div data-src="fotos/roka-mx-liner-detail.jpg" data-alt="Liner Materials voor inner comfort">
+          <img src="fotos/roka-mx-liner-detail.jpg" alt="Liner detail">
+        </div>
+        <div data-src="fotos/roka-mx-ankle-detail.jpg" data-alt="Quick-Release Ankle Panels">
+          <img src="fotos/roka-mx-ankle-detail.jpg" alt="Ankle panel">
+        </div>
+        <div data-src="fotos/roka-mx-scs-coating.jpg" data-alt="SCS Coating voor speed en durability">
+          <img src="fotos/roka-mx-scs-coating.jpg" alt="SCS Coating">
+        </div>
+        <div data-src="fotos/roka-action-lucy-swim-exit.jpg" data-alt="Lucy Charles Barclay uit water in ROKA Maverick">
+          <img src="fotos/roka-action-lucy-swim-exit.jpg" alt="Atleet uit water">
+        </div>
+        <div data-src="fotos/roka-action-ironman-start.jpg" data-alt="Atleet bij IRONMAN start in ROKA Maverick">
+          <img src="fotos/roka-action-ironman-start.jpg" alt="IRONMAN start">
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1>ROKA Maverick MX Gen.I — Dames maat M</h1>
+      <div class="sub">Triathlon / open-water full-suit · Maximum Buoyancy · Black/Subzero (turquoise accenten)</div>
+
+      <div class="badges">
+        <span class="badge gold">Topstaat (A)</span>
+        <span class="badge green">Vrijwel nieuw</span>
+        <span class="badge green">Geen beschadigingen</span>
+        <span class="badge blue">Geen reparaties</span>
+        <span class="badge amber">Sold out bij ROKA</span>
+        <span class="badge blue">IRONMAN-approved</span>
+      </div>
+
+      <div class="price-card">
+
+        <div class="price-koop">
+          <span class="now">€&nbsp;269</span>
+          <span class="was">€&nbsp;510</span>
+          <span class="save">−47%</span>
+        </div>
+        <div class="extras-line">
+          MSRP $545 (≈ €510). ROKA Maverick MX Gen.I is uitverkocht bij ROKA zelf — alle maten Sold Out.
+        </div>
+
+        <a class="cta"
+           href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20interesse%20in%20de%20ROKA%20Maverick%20MX%20dames%20maat%20M%20-%20kun%20je%20me%20meer%20vertellen%3F">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Stuur me een berichtje op WhatsApp
+        </a>
+        <div class="cta-sub">Je opent WhatsApp met een voorgevuld bericht</div>
+
+      </div>
+
+      <div style="margin-top: 28px;">
+        <h3 style="font-size: 15px; color: #4a5a76; margin-bottom: 8px;">Liever dit wetsuit huren?</h3>
+        <table class="rent-table">
+          <tbody>
+            <tr><td>1 dag</td><td class="price">€ 20</td></tr>
+            <tr><td>Weekend (vr-ma)</td><td class="price">€ 40</td></tr>
+            <tr><td>Midweek (ma-vr)</td><td class="price">€ 60</td></tr>
+            <tr><td>Hele week</td><td class="price">€ 85</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="size-link">
+        <strong>Twijfel je over de maat?</strong>
+        Bekijk de officiële
+        <a href="https://rokamultisport.com/products/womens-maverick-mx-maximum-buoyancy-wetsuit#size-chart" target="_blank" rel="noopener">ROKA Maverick maattabel (heren &amp; dames)</a>
+        op de productpagina van ROKA zelf.
+      </div>
+
+    </div>
+
+  </div>
+
+  <section>
+    <h2>Over dit pak</h2>
+    <p>De Maverick MX is door ROKA omschreven als <em>"a game-changer for non-elite swimmers who want elite-level performance"</em>. Het was de <strong>eerste maximum-buoyancy wetsuit</strong> ooit die het drijfvermogen rond core, borst en armen wist te verhogen zonder de schoudermobiliteit op te offeren — dankzij de gepatenteerde <strong>ARMS-UP™ Construction</strong>.</p>
+    <p>Concreet: een <strong>1.5/3/5 mm buoyancy-profiel</strong> met een 5 mm chest panel voor centerline-drijfvermogen, een Independent Neck Suspension Panel, Quick-Release Ankle Panels (voor snelle T1-uitstap), het Revolution X "Arms-Up" Pattern en een SCS Coating voor extra duurzaamheid en reduceerde drag. Wedstrijdgoedgekeurd onder IRONMAN-regels.</p>
+    <p>Voor wie: triatleten en open-water-zwemmers die <strong>extra lift willen bij benen en heupen</strong> — vooral handig als je benen graag laten zakken — zonder de armbeweging te beperken. Dit specifieke exemplaar is een <strong>Gen.I</strong>, sinds eind 2024 uitverkocht bij ROKA zelf in alle maten — zeldzaamheidsfactor speelt mee.</p>
+  </section>
+
+  <section>
+    <h2>Patented technologie van de Maverick MX</h2>
+    <div class="tech-grid">
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/roka-mx-armsup-detail.jpg" alt="ARMS-UP construction in actie"></div>
+        <div class="tech-card-body">
+          <span class="tech-patented">Patented</span>
+          <h3>Zero shoulder restriction</h3>
+          <div class="tech-sub">ARMS-UP™ Construction</div>
+          <p>Door het pak letterlijk in "armen-omhoog"-stand te construeren, beweegt het neopreen mee in plaats van tegen — geen druk op de schouders bij elke slag.</p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/roka-mx-buoyancy-detail.jpg" alt="RSX Technology buoyancy panel"></div>
+        <div class="tech-card-body">
+          <span class="tech-patented">Patented</span>
+          <h3>Optimal body position</h3>
+          <div class="tech-sub">1.5 / 3 / 5 mm buoyancy profile</div>
+          <p>20% méér drijfvermogen rond core en borst dan de Maverick Comp. Tilt heupen en benen omhoog en breng je in de optimale glijhouding.</p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/roka-mx-liner-detail.jpg" alt="Liner Materials"></div>
+        <div class="tech-card-body">
+          <h3>Inner comfort &amp; support</h3>
+          <div class="tech-sub">Liner Materials</div>
+          <p>Premium binnen-liner geeft compressie waar nodig en glijdt tegelijk soepel langs je huid bij het aandoen — minder gevecht, meer focus op zwemmen.</p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/roka-mx-scs-coating.jpg" alt="SCS Nano Coating"></div>
+        <div class="tech-card-body">
+          <h3>Speed &amp; durability</h3>
+          <div class="tech-sub">SCS Nano Coating</div>
+          <p>SCS Nano-coating op de buitenkant verlaagt drag in het water en beschermt de neopreen tegen slijtage — sneller en gaat langer mee.</p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/roka-mx-neck-detail.jpg" alt="Independent Neck Suspension"></div>
+        <div class="tech-card-body">
+          <h3>Independent neck suspension</h3>
+          <div class="tech-sub">Low-Profile Neck</div>
+          <p>De kraag wordt onafhankelijk opgehangen aan de torso, zodat hij niet trekt of irriteert wanneer je je hoofd draait om adem te halen.</p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/roka-mx-ankle-detail.jpg" alt="Quick-Release Ankle Panels"></div>
+        <div class="tech-card-body">
+          <h3>Kick out faster</h3>
+          <div class="tech-sub">Quick-Release Ankle Panels</div>
+          <p>Speciaal materiaal aan de achterzijde van de enkel laat je in T1 met één kick uit je pak stappen — seconden winst die tellen.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Conditie</h2>
+    <div class="conditie-card">
+      <ul>
+        <li><strong>Conditie-klasse: Topstaat (A)</strong> — vrijwel als nieuw</li>
+        <li><strong>Vrijwel nieuw</strong>: geen gebruikssporen</li>
+        <li><strong>Geen beschadigingen</strong>, geen scheuren, geen reparaties</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Specs</h2>
+    <div class="specs-grid">
+      <div class="label">Conditie-klasse</div>
+      <div class="value highlight">Topstaat (A)</div>
+
+      <div class="label">Merk</div>
+      <div class="value">ROKA (Roka Sports Inc., USA)</div>
+
+      <div class="label">Model</div>
+      <div class="value">Maverick MX Gen.I</div>
+
+      <div class="label">Type</div>
+      <div class="value">Triathlon / open-water full-suit (maximum buoyancy)</div>
+
+      <div class="label">Maat</div>
+      <div class="value">M (dames) &nbsp;·&nbsp; <a href="https://rokamultisport.com/products/womens-maverick-mx-maximum-buoyancy-wetsuit#size-chart" target="_blank" rel="noopener" style="font-size: 13px; font-weight: 500;">bekijk maattabel ROKA</a></div>
+
+      <div class="label">Kleur</div>
+      <div class="value">Black/Subzero (zwart met turquoise accenten)</div>
+
+      <div class="label">Gewicht</div>
+      <div class="value">±&nbsp;1,8 kg (1814 g — officiële ROKA-specificatie)</div>
+
+      <div class="label">Buoyancy-profiel</div>
+      <div class="value">1.5 / 3 / 5 mm (gradiëntdikte voor optimale lichaamspositie)</div>
+
+      <div class="label">Chest panel</div>
+      <div class="value">5 mm (upper body centerline buoyancy)</div>
+
+      <div class="label">Speciale features</div>
+      <div class="value">
+        ARMS-UP™ Construction (patented) ·<br>
+        Revolution X "Arms-Up" Pattern (patented) ·<br>
+        Independent Neck Suspension Panel ·<br>
+        Low-Profile Neck ·<br>
+        Quick-Release Ankle Panels ·<br>
+        SCS Coating for Durability and Reduced Drag
+      </div>
+
+      <div class="label">Wedstrijdgoedkeuring</div>
+      <div class="value">IRONMAN-compliant</div>
+
+      <div class="label">Generatie</div>
+      <div class="value">Gen.I (uitverkocht bij ROKA, opgevolgd door latere generaties)</div>
+
+      <div class="label">SKU op binnenlabel</div>
+      <div class="value">1010-2202</div>
+
+      <div class="label">Oorspronkelijke nieuwprijs (MSRP)</div>
+      <div class="value">$ 545 (≈ € 510)</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wat betekent "tweedehands"?</h2>
+    <p>Alle wetsuits in de IkLeerBorstcrawl-shop zijn tweedehands. We delen ze in drie klassen in zodat je vooraf weet wat je mag verwachten:</p>
+
+    <div class="klasse-grid">
+
+      <div class="klasse-card active">
+        <span class="klasse-letter">A</span>
+        <div class="klasse-name">Topstaat</div>
+        <div class="klasse-desc">Gebruikt maar vrijwel als nieuw. Hooguit 1 of 2 kleine nagelscheurtjes, geen grote reparaties. Voor wie de hoogste kwaliteit wil voor ver onder nieuwprijs.</div>
+      </div>
+
+      <div class="klasse-card">
+        <span class="klasse-letter">B</span>
+        <div class="klasse-name">Middenklasse</div>
+        <div class="klasse-desc">Maximaal 1 of 2 kleine, professioneel uitgevoerde reparaties. Doet niets af aan de kwaliteit en gebruikswaarde — perfect te gebruiken net als een nieuw wetsuit.</div>
+      </div>
+
+      <div class="klasse-card">
+        <span class="klasse-letter">C</span>
+        <div class="klasse-name">Voordeelklasse</div>
+        <div class="klasse-desc">Duidelijk gebruikt, meerdere zichtbare reparaties. Nog steeds een volwaardig pak om mee te zwemmen of trainen — alleen voor een veel voordeligere prijs.</div>
+      </div>
+
+    </div>
+
+    <div class="extra-info">
+      <strong>Reparatie-recht bij koop:</strong> bij aankoop heb je het recht dat eventuele grotere scheurtjes (anders dan hele kleine nagelscheurtjes) eerst worden gerepareerd voordat je het pak meeneemt. Voor klasse A komt dit in de praktijk niet voor — voor B en C gebeurt dit op verzoek.
+    </div>
+  </section>
+
+  <section>
+    <h2>Garantie en restitutie</h2>
+    <div class="voorwaarden">
+      <ul>
+        <li><strong>Geen garantie</strong> bij tweedehands wetsuits — dat is inherent aan een 2dehands-aankoop.</li>
+        <li><strong>Vooraf bekijken kan altijd.</strong> Je kunt het pak komen passen of bezichtigen voordat je beslist.</li>
+        <li><strong>Vraag gerust foto's van het werkelijke pak of meer informatie.</strong> De productfoto's en technologie-beelden hierboven zijn officiële ROKA-marketingfoto's van de Maverick MX-lijn (zelfde model en zelfde Black/Subzero kleurschema). Wil je foto's van het werkelijke exemplaar zien? Stuur een berichtje, dan stuur ik die toe.</li>
+        <li><strong>Eenmaal gekocht is gekocht.</strong> Geen restitutie achteraf.</li>
+        <li><strong>Twijfel je?</strong> Huur het pak dan eerst (de huurprijzen staan bovenaan op deze pagina) en beslis daarna of je het wilt kopen. Zo ben je 100% zeker.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Vragen?</h2>
+    <p>Stuur een berichtje op WhatsApp en we reageren doorgaans binnen een paar uur. Bezichtigen of passen kan in overleg.</p>
+    <a class="cta" style="max-width: 320px;"
+       href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20interesse%20in%20de%20ROKA%20Maverick%20MX%20dames%20maat%20M%20-%20kun%20je%20me%20meer%20vertellen%3F">
+      WhatsApp ons
+    </a>
+  </section>
+
+  <div class="credits">
+    <strong>Foto-bronnen en disclaimer</strong><br>
+    Alle foto's zijn officieel ROKA-merkmateriaal van de Maverick MX-lijn. © ROKA Sports Inc. — gebruikt voor de presentatie van een 2dehands ROKA Maverick MX Gen.I wetsuit aangeboden door <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>.
+    <ul style="margin-left: 20px; margin-top: 6px;">
+      <li>Mannequin shots Gen.I (zelfde model en kleur als dit pak): <a href="https://rokamultisport.com/products/womens-maverick-mx-maximum-buoyancy-wetsuit">rokamultisport.com (Women's Maverick MX Gen.I)</a></li>
+      <li>Technologie-detail- en marketingfoto's (ARMS-UP, RSX Technology, neoprene, liner, ankle, neck, SCS coating): <a href="https://img.roka.com/pages/20-mav-mx-launch/">ROKA Maverick MX launch image library</a></li>
+      <li>Atleet/actiefoto's (Lucy Charles Barclay, IRONMAN start) — ROKA Maverick-lijn: <a href="https://rokamultisport.com/">rokamultisport.com</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  Onderdeel van <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>
+  · 2dehands wetsuits voor klanten
+</footer>
+
+<script>
+  (function() {
+    const thumbs = Array.from(document.querySelectorAll('#thumbsContainer > div'));
+    const mainImg = document.getElementById('mainImage');
+    const counterEl = document.getElementById('counterCurrent');
+    const totalEl = document.getElementById('counterTotal');
+    let current = 0;
+    totalEl.textContent = thumbs.length;
+
+    function show(idx) {
+      current = (idx + thumbs.length) % thumbs.length;
+      const t = thumbs[current];
+      mainImg.src = t.dataset.src;
+      mainImg.alt = t.dataset.alt || '';
+      counterEl.textContent = current + 1;
+      thumbs.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    window.navFoto = function(delta) { show(current + delta); };
+
+    thumbs.forEach((t, i) => {
+      t.addEventListener('click', function() { show(i); });
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft')  { show(current - 1); }
+      if (e.key === 'ArrowRight') { show(current + 1); }
+    });
+  })();
+</script>
+
+</body>
+</html>

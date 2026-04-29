@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2dehands wetsuits — IkLeerBorstcrawl</title>
+  <meta name="description" content="2dehands triathlon-wetsuits van IkLeerBorstcrawl.nl — kopen of huren. Vrijwel nieuw, scherpe prijzen, persoonlijk contact via WhatsApp.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a2942;
+      background: #f6f9fc;
+      line-height: 1.55;
+    }
+    a { color: #0a6cb1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e6eaf0;
+      padding: 24px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 26px;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    header p {
+      color: #6b7d97;
+      font-size: 15px;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    .intro {
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+    .intro h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .intro p { margin-bottom: 10px; color: #4a5a76; }
+    .intro p:last-child { margin-bottom: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(20,40,80,0.12);
+    }
+    .card .photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: #f0f3f7;
+      overflow: hidden;
+    }
+    .card .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card .body {
+      padding: 18px 20px 22px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card .brand {
+      font-size: 11px;
+      color: #6b7d97;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .card h2 {
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .card .meta {
+      color: #6b7d97;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .card .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .card .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .card .badge.gold { background: #fff2c2; color: #7a5a00; border: 1px solid #f0d573; }
+    .card .badge.green { background: #e6f3ec; color: #1f7a3f; }
+
+    .card .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+      margin-top: auto;
+    }
+    .card .price { font-size: 24px; font-weight: 700; color: #1a2942; }
+    .card .was { font-size: 13px; color: #8e9bb1; text-decoration: line-through; }
+
+    .card .rent-line {
+      font-size: 12px;
+      color: #6b7d97;
+      margin-bottom: 14px;
+    }
+
+    .card .cta {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: #1a2942;
+      color: #fff;
+      padding: 11px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.15s;
+    }
+    .card .cta:hover {
+      background: #2a3a5a;
+      text-decoration: none;
+    }
+
+    .info-block {
+      margin-top: 48px;
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .info-block h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .info-block ul {
+      padding-left: 20px;
+      color: #4a5a76;
+    }
+    .info-block li { margin-bottom: 6px; font-size: 14px; }
+
+    footer {
+      border-top: 1px solid #e6eaf0;
+      background: #fff;
+      padding: 24px;
+      color: #6b7d97;
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>2dehands wetsuits</h1>
+  <p>IkLeerBorstcrawl.nl · kopen of huren · persoonlijk contact via WhatsApp</p>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <h2>Welkom</h2>
+    <p>Op deze pagina vind je de tweedehands triathlon-wetsuits die we te koop of te huur aanbieden. Allemaal vooraf gecheckt, ingedeeld in conditieklassen (Topstaat / Middenklasse / Voordeelklasse), en met een eerlijke prijsstelling — meestal onder vergelijkbare aanbiedingen op Marktplaats.</p>
+    <p>Klik op een wetsuit voor specs, foto's en huur- en koopprijzen. Vragen? Stuur een berichtje via WhatsApp — direct contact, snel antwoord.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- deboer Fjord 3.0 Series 2 -->
+    <a href="deboer-fjord-3-0-series-2-heren-l/" class="card" style="color: inherit;">
+      <div class="photo">
+        <img src="deboer-fjord-3-0-series-2-heren-l/fotos/deboer-trikipedia-1.jpg" alt="deboer Fjord 3.0 Series 2">
+      </div>
+      <div class="body">
+        <div class="brand">deboer</div>
+        <h2>Fjord 3.0 Series 2</h2>
+        <div class="meta">Heren · Maat L · Triathlon full-suit</div>
+        <div class="badges">
+          <span class="badge gold">Topstaat (A)</span>
+          <span class="badge green">2x gedragen</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 549</span>
+          <span class="was">€ 1.404</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 25 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- Dare 2 Tri Mach 3 FM -->
+    <a href="dare2tri-mach3-fm-dames-m/" class="card" style="color: inherit;">
+      <div class="photo">
+        <img src="dare2tri-mach3-fm-dames-m/fotos/d2t-mach3-fullbody-2.jpg" alt="Dare 2 Tri Mach 3 FM">
+      </div>
+      <div class="body">
+        <div class="brand">Dare 2 Tri</div>
+        <h2>Mach 3 FM</h2>
+        <div class="meta">Dames · Maat M · Ouder model</div>
+        <div class="badges">
+          <span class="badge gold">Topstaat (A)</span>
+          <span class="badge green">Vrijwel nieuw</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 169</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 15 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- ROKA Maverick MX Gen.I -->
+    <a href="roka-maverick-mx-gen1-dames-m/" class="card" style="color: inherit;">
+      <div class="photo">
+        <img src="roka-maverick-mx-gen1-dames-m/fotos/roka-mx-front.jpg" alt="ROKA Maverick MX Gen.I">
+      </div>
+      <div class="body">
+        <div class="brand">ROKA</div>
+        <h2>Maverick MX Gen.I</h2>
+        <div class="meta">Dames · Maat M · Maximum Buoyancy</div>
+        <div class="badges">
+          <span class="badge gold">Topstaat (A)</span>
+          <span class="badge green">Vrijwel nieuw</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 269</span>
+          <span class="was">€ 510</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 20 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="info-block">
+    <h2>Hoe werkt het?</h2>
+    <ul>
+      <li><strong>Kopen:</strong> klik op een wetsuit, lees de specs en vraag via WhatsApp om een afspraak om te bezichtigen of te passen. Eenmaal akkoord: persoonlijk afhalen of in overleg verzenden.</li>
+      <li><strong>Huren:</strong> alle pakken zijn ook te huur (per dag, weekend, midweek of week). Handig om eerst te testen voordat je beslist te kopen.</li>
+      <li><strong>Conditie:</strong> elk pak is ingedeeld in klasse A (Topstaat), B (Middenklasse) of C (Voordeelklasse). Klasse-uitleg staat op elke detail-pagina.</li>
+      <li><strong>Geen garantie / geen restitutie</strong> bij 2dehands-aankopen. Wel: vooraf bekijken kan altijd, en bij twijfel huur je het pak eerst.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  Onderdeel van <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>
+  · 2dehands wetsuits voor klanten
+</footer>
+
+</body>
+</html>

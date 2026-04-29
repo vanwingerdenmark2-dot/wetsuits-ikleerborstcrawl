@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/deboer"
+  to = "/deboer-fjord-3-0-series-2-heren-l/"
+  status = 301
+
+[[redirects]]
+  from = "/mach3"
+  to = "/dare2tri-mach3-fm-dames-m/"
+  status = 301
+
+[[redirects]]
+  from = "/roka"
+  to = "/roka-maverick-mx-gen1-dames-m/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
