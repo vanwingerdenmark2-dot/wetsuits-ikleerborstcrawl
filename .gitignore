@@ -6,3 +6,12 @@ Thumbs.db
 .idea/
 node_modules/
 .netlify/
+
+# Werk-mappen die NIET op de live site horen
+BUILDER TOOLS/
+**/fotos/NIEUWE FOTOS*/
+**/fotos/_archief-niet-meer-gebruikt/
+**/fotos/fotos eigen wetsuit/
+**/fotos/Originele fotos/
+**/fotos/DEF*/
+**/Originele fotos/

@@ -52,6 +52,77 @@
     .intro p { margin-bottom: 10px; color: #4a5a76; }
     .intro p:last-child { margin-bottom: 0; }
 
+    .filter-bar {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+      padding: 6px;
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+    }
+    .sort-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .sort-bar label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #6b7d97;
+      white-space: nowrap;
+    }
+    .sort-select {
+      padding: 6px 28px 6px 10px;
+      border: 1px solid #e6eaf0;
+      border-radius: 6px;
+      background: #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%236b7d97' d='M0 0l5 6 5-6z'/></svg>") no-repeat right 10px center;
+      color: #1a2942;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    .sort-select:focus {
+      outline: none;
+      border-color: #1a2942;
+    }
+    .filter-btn {
+      flex: 1;
+      min-width: 100px;
+      padding: 10px 18px;
+      border: none;
+      background: transparent;
+      color: #4a5a76;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      font-family: inherit;
+    }
+    .filter-btn:hover { background: #f0f3f7; }
+    .filter-btn.active {
+      background: #1a2942;
+      color: #fff;
+    }
+    .filter-btn.active:hover { background: #2a3a5a; }
+    .empty-state {
+      text-align: center;
+      padding: 60px 24px;
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      color: #6b7d97;
+    }
+    .empty-state p { margin: 0; font-size: 15px; }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -121,12 +192,21 @@
 
     .card .price-row {
       display: flex;
-      align-items: baseline;
-      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 10px;
       margin-bottom: 12px;
       margin-top: auto;
     }
-    .card .price { font-size: 24px; font-weight: 700; color: #1a2942; }
+    .card .price {
+      width: 100%;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a2942;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .card .was-label { font-size: 11px; color: #6b7d97; }
     .card .was { font-size: 13px; color: #8e9bb1; text-decoration: line-through; }
 
     .card .rent-line {
@@ -194,12 +274,102 @@
     <p>Klik op een wetsuit voor specs, foto's en huur- en koopprijzen. Vragen? Stuur een berichtje via WhatsApp — direct contact, snel antwoord.</p>
   </div>
 
-  <div class="grid">
+  <div class="filter-bar" role="tablist" aria-label="Filter op categorie">
+    <button class="filter-btn active" data-filter="alle" type="button">Alle wetsuits</button>
+    <button class="filter-btn" data-filter="heren" type="button">Heren wetsuits</button>
+    <button class="filter-btn" data-filter="dames" type="button">Dames wetsuits</button>
+    <button class="filter-btn" data-filter="kinder" type="button">Kinder wetsuits</button>
+  </div>
+
+  <div class="sort-bar">
+    <label for="sortSelect">Sorteren:</label>
+    <select class="sort-select" id="sortSelect" aria-label="Sorteervolgorde">
+      <option value="prijs-hoog">Prijs (hoog naar laag)</option>
+      <option value="prijs-laag">Prijs (laag naar hoog)</option>
+      <option value="binnen-eerst">Eerst binnengekomen</option>
+      <option value="binnen-laatst">Laatst binnengekomen</option>
+    </select>
+  </div>
+
+  <div class="empty-state" id="emptyState" style="display: none;">
+    <p>Op dit moment zijn er geen <span id="emptyCat">wetsuits</span> beschikbaar in deze categorie.</p>
+  </div>
+
+  <div class="grid" id="cardGrid">
+
+    <!-- HUUB Archimedes II -->
+    <a href="huub-archimedes-ii-3-5-heren-m/" class="card" data-categorie="heren" data-prijs="199" data-volgnr="10" style="color: inherit;">
+      <div class="photo">
+        <img src="huub-archimedes-ii-3-5-heren-m/fotos/archimedes-voorkant.jpg" alt="HUUB Archimedes II 3:5">
+      </div>
+      <div class="body">
+        <div class="brand">HUUB</div>
+        <h2>Archimedes II 3:5</h2>
+        <div class="meta">Heren · Maat M · Topmodel uit 2015</div>
+        <div class="badges">
+          <span class="badge gold">Middenklasse (B)</span>
+          <span class="badge blue">3:5 buoyancy</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 199</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 699</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 25 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- deboer Flōh 2.0 -->
+    <a href="deboer-floh-2-0-heren-lt/" class="card" data-categorie="heren" data-prijs="299" data-volgnr="9" style="color: inherit;">
+      <div class="photo">
+        <img src="deboer-floh-2-0-heren-lt/fotos/floh-voorkant.jpg" alt="deboer Flōh 2.0">
+      </div>
+      <div class="body">
+        <div class="brand">deboer</div>
+        <h2>Flōh 2.0</h2>
+        <div class="meta">Heren · Maat LT · Cold-water wedstrijd</div>
+        <div class="badges">
+          <span class="badge gold">Middenklasse (B)</span>
+          <span class="badge blue">Voor koud water</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 299</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 699</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 25 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- DHB Hydron 2.0 -->
+    <a href="dhb-hydron-2-0-heren-s/" class="card" data-categorie="heren" data-prijs="79" data-volgnr="8" style="color: inherit;">
+      <div class="photo">
+        <img src="dhb-hydron-2-0-heren-s/fotos/hydron-voorkant.jpg" alt="DHB Hydron 2.0">
+      </div>
+      <div class="body">
+        <div class="brand">DHB</div>
+        <h2>Hydron 2.0</h2>
+        <div class="meta">Heren · Maat S · Instap-pak</div>
+        <div class="badges">
+          <span class="badge gold">Topstaat (A)</span>
+          <span class="badge green">Nieuw zonder kaartje</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 79</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 140</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 10 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
 
     <!-- deboer Fjord 3.0 Series 2 -->
-    <a href="deboer-fjord-3-0-series-2-heren-l/" class="card" style="color: inherit;">
+    <a href="deboer-fjord-3-0-series-2-heren-l/" class="card" data-categorie="heren" data-prijs="549" data-volgnr="1" style="color: inherit;">
       <div class="photo">
-        <img src="deboer-fjord-3-0-series-2-heren-l/fotos/deboer-trikipedia-1.jpg" alt="deboer Fjord 3.0 Series 2">
+        <img src="deboer-fjord-3-0-series-2-heren-l/fotos/fjord-promo-front-A.jpg" alt="deboer Fjord 3.0 Series 2">
       </div>
       <div class="body">
         <div class="brand">deboer</div>
@@ -211,6 +381,7 @@
         </div>
         <div class="price-row">
           <span class="price">€ 549</span>
+          <span class="was-label">Nieuwprijs</span>
           <span class="was">€ 1.404</span>
         </div>
         <div class="rent-line">of huren vanaf € 25 / dag</div>
@@ -219,34 +390,35 @@
     </a>
 
     <!-- Dare 2 Tri Mach 3 FM -->
-    <a href="dare2tri-mach3-fm-dames-m/" class="card" style="color: inherit;">
+    <a href="dare2tri-mach3-fm-dames-m/" class="card" data-categorie="dames" data-prijs="139" data-volgnr="2" style="color: inherit;">
       <div class="photo">
-        <img src="dare2tri-mach3-fm-dames-m/fotos/d2t-mach3-fullbody-2.jpg" alt="Dare 2 Tri Mach 3 FM">
+        <img src="dare2tri-mach3-fm-dames-m/fotos/d2t-mach3-fm-voorkant.jpg" alt="Dare 2 Tri Mach 3 FM">
       </div>
       <div class="body">
         <div class="brand">Dare 2 Tri</div>
         <h2>Mach 3 FM</h2>
         <div class="meta">Dames · Maat M · Ouder model</div>
         <div class="badges">
-          <span class="badge gold">Topstaat (A)</span>
-          <span class="badge green">Vrijwel nieuw</span>
+          <span class="badge gold">Middenklasse (B)</span>
         </div>
         <div class="price-row">
-          <span class="price">€ 169</span>
+          <span class="price">€ 139</span>
+          <span class="was-label">Huidig model</span>
+          <span class="was">€ 440</span>
         </div>
         <div class="rent-line">of huren vanaf € 15 / dag</div>
         <span class="cta">Bekijk dit pak</span>
       </div>
     </a>
 
-    <!-- ROKA Maverick MX Gen.I -->
-    <a href="roka-maverick-mx-gen1-dames-m/" class="card" style="color: inherit;">
+    <!-- ROKA Maverick MX Generation II -->
+    <a href="roka-maverick-mx-gen2-dames-m/" class="card" data-categorie="dames" data-prijs="269" data-volgnr="3" style="color: inherit;">
       <div class="photo">
-        <img src="roka-maverick-mx-gen1-dames-m/fotos/roka-mx-front.jpg" alt="ROKA Maverick MX Gen.I">
+        <img src="roka-maverick-mx-gen2-dames-m/fotos/roka-mx-voorkant.jpg" alt="ROKA Maverick MX Generation II">
       </div>
       <div class="body">
         <div class="brand">ROKA</div>
-        <h2>Maverick MX Gen.I</h2>
+        <h2>Maverick MX Generation II</h2>
         <div class="meta">Dames · Maat M · Maximum Buoyancy</div>
         <div class="badges">
           <span class="badge gold">Topstaat (A)</span>
@@ -254,7 +426,100 @@
         </div>
         <div class="price-row">
           <span class="price">€ 269</span>
-          <span class="was">€ 510</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 640</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 20 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- Zone3 Vision -->
+    <a href="zone3-vision-dames-m/" class="card" data-categorie="dames" data-prijs="99" data-volgnr="4" style="color: inherit;">
+      <div class="photo">
+        <img src="zone3-vision-dames-m/fotos/zone3-vision-voorkant.jpg" alt="Zone3 Vision">
+      </div>
+      <div class="body">
+        <div class="brand">Zone3</div>
+        <h2>Vision</h2>
+        <div class="meta">Dames · Maat M · Triathlon full-suit</div>
+        <div class="badges">
+          <span class="badge green">Voordeelklasse (C)</span>
+          <span class="badge green">Professioneel gerepareerd</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 99</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 499</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 18 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- Zone3 Vanquish -->
+    <a href="zone3-vanquish-dames-st/" class="card" data-categorie="dames" data-prijs="269" data-volgnr="5" style="color: inherit;">
+      <div class="photo">
+        <img src="zone3-vanquish-dames-st/fotos/zone3-vanquish-voorkant.jpg" alt="Zone3 Vanquish">
+      </div>
+      <div class="body">
+        <div class="brand">Zone3</div>
+        <h2>Vanquish</h2>
+        <div class="meta">Dames · Maat ST · Topmodel Zone3</div>
+        <div class="badges">
+          <span class="badge gold">Middenklasse (B)</span>
+          <span class="badge blue">Wedstrijd-niveau</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 269</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 700</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 25 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- BlueSeventy Helix -->
+    <a href="blueseventy-helix-dames-xs/" class="card" data-categorie="dames" data-prijs="169" data-volgnr="6" style="color: inherit;">
+      <div class="photo">
+        <img src="blueseventy-helix-dames-xs/fotos/helix-voorkant.jpg" alt="BlueSeventy Helix">
+      </div>
+      <div class="body">
+        <div class="brand">BlueSeventy</div>
+        <h2>Helix</h2>
+        <div class="meta">Dames · Maat SM · Topmodel BlueSeventy</div>
+        <div class="badges">
+          <span class="badge gold">Middenklasse (B)</span>
+          <span class="badge blue">Wedstrijd-niveau</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 169</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 850</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 25 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- BTTLNS Goddess Thermal Inferno -->
+    <a href="bttlns-goddess-thermal-inferno-dames-wl/" class="card" data-categorie="dames" data-prijs="229" data-volgnr="7" style="color: inherit;">
+      <div class="photo">
+        <img src="bttlns-goddess-thermal-inferno-dames-wl/fotos/bttlns-voorkant.jpg" alt="BTTLNS Goddess Thermal Inferno">
+      </div>
+      <div class="body">
+        <div class="brand">BTTLNS</div>
+        <h2>Goddess Thermal Inferno</h2>
+        <div class="meta">Dames · Maat WL · Thermisch model</div>
+        <div class="badges">
+          <span class="badge gold">Middenklasse (B)</span>
+          <span class="badge blue">Thermisch</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 229</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 499</span>
         </div>
         <div class="rent-line">of huren vanaf € 20 / dag</div>
         <span class="cta">Bekijk dit pak</span>
@@ -270,6 +535,7 @@
       <li><strong>Huren:</strong> alle pakken zijn ook te huur (per dag, weekend, midweek of week). Handig om eerst te testen voordat je beslist te kopen.</li>
       <li><strong>Conditie:</strong> elk pak is ingedeeld in klasse A (Topstaat), B (Middenklasse) of C (Voordeelklasse). Klasse-uitleg staat op elke detail-pagina.</li>
       <li><strong>Geen garantie / geen restitutie</strong> bij 2dehands-aankopen. Wel: vooraf bekijken kan altijd, en bij twijfel huur je het pak eerst.</li>
+      <li><strong>Reparatie:</strong> wetsuit kapot of beschadigd? Ook voor jouw eigen pak — bekijk onze <a href="reparatie/">reparatieservice &amp; tarieven</a>.</li>
     </ul>
   </div>
 
@@ -279,6 +545,81 @@
   Onderdeel van <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>
   · 2dehands wetsuits voor klanten
 </footer>
+
+<script>
+  (function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#cardGrid .card');
+    const grid = document.getElementById('cardGrid');
+    const emptyState = document.getElementById('emptyState');
+    const emptyCat = document.getElementById('emptyCat');
+    const sortSelect = document.getElementById('sortSelect');
+
+    const labels = { heren: 'heren-wetsuits', dames: 'dames-wetsuits', kinder: 'kinder-wetsuits', alle: 'wetsuits' };
+
+    function applyFilter(categorie) {
+      let visible = 0;
+      cards.forEach(c => {
+        const match = categorie === 'alle' || c.dataset.categorie === categorie;
+        c.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === categorie));
+      if (visible === 0) {
+        grid.style.display = 'none';
+        emptyState.style.display = '';
+        emptyCat.textContent = labels[categorie] || 'wetsuits';
+      } else {
+        grid.style.display = '';
+        emptyState.style.display = 'none';
+      }
+    }
+
+    function applySort(mode) {
+      const cardsArr = Array.from(grid.querySelectorAll('.card'));
+      cardsArr.sort((a, b) => {
+        const aP = parseInt(a.dataset.prijs, 10);
+        const bP = parseInt(b.dataset.prijs, 10);
+        const aV = parseInt(a.dataset.volgnr, 10);
+        const bV = parseInt(b.dataset.volgnr, 10);
+        switch (mode) {
+          case 'prijs-laag':    return aP - bP || aV - bV;
+          case 'binnen-eerst':  return aV - bV;
+          case 'binnen-laatst': return bV - aV;
+          case 'prijs-hoog':
+          default:              return bP - aP || aV - bV;
+        }
+      });
+      cardsArr.forEach(c => grid.appendChild(c));
+    }
+
+    function categorieFromHash() {
+      const hash = window.location.hash.replace('#', '');
+      const map = { 'heren-wetsuits': 'heren', 'dames-wetsuits': 'dames', 'kinder-wetsuits': 'kinder' };
+      return map[hash] || 'alle';
+    }
+
+    // Default-sortering: prijs hoog naar laag
+    applySort('prijs-hoog');
+    applyFilter(categorieFromHash());
+
+    filterBtns.forEach(b => {
+      b.addEventListener('click', () => {
+        const cat = b.dataset.filter;
+        if (cat === 'alle') {
+          history.replaceState(null, '', window.location.pathname);
+        } else {
+          window.location.hash = labels[cat];
+        }
+        applyFilter(cat);
+      });
+    });
+
+    sortSelect.addEventListener('change', () => applySort(sortSelect.value));
+
+    window.addEventListener('hashchange', () => applyFilter(categorieFromHash()));
+  })();
+</script>
 
 </body>
 </html>

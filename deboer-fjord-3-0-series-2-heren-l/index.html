@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>deboer Fjord 3.0 Series 2 — Heren maat L | Wetsuits IkLeerBorstcrawl</title>
-  <meta name="description" content="2dehands deboer Fjord 3.0 Series 2 herenwetsuit, maat L, 2x gebruikt. Inclusief originele doos, handschoentjes en badmuts. €549.">
+  <meta name="description" content="2dehands deboer Fjord 3.0 Series 2 herenwetsuit, maat L, 2x door eigenaar getest. Inclusief originele doos, handschoentjes en badmuts. €549.">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -142,14 +142,22 @@
     }
     .price-koop {
       display: flex;
-      align-items: baseline;
-      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
       margin-bottom: 8px;
     }
     .price-koop .now {
-      font-size: 34px;
+      width: 100%;
+      font-size: 40px;
       font-weight: 700;
       color: #1a2942;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-koop .was-label {
+      font-size: 13px;
+      color: #6b7d97;
     }
     .price-koop .was {
       text-decoration: line-through;
@@ -242,6 +250,47 @@
     .specs-grid > div:nth-last-child(-n+2) { border-bottom: none; }
     .specs-grid > div.value.highlight { color: #7a5a00; font-weight: 700; }
 
+    /* Technologie-sectie: 2x2 grid met patented features */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    @media (max-width: 700px) { .tech-grid { grid-template-columns: 1fr; } }
+    .tech-card {
+      background: #1a2942;
+      color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .tech-card .tech-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0a1525;
+      overflow: hidden;
+    }
+    .tech-card .tech-img img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .tech-card-body { padding: 16px 18px 18px; }
+    .tech-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+    .tech-card .tech-sub {
+      font-size: 12px;
+      color: #4ad9c6;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .tech-card p { font-size: 13px; color: #c8d2e6; line-height: 1.55; margin: 0; }
+
     .conditie-card {
       background: #fff;
       border: 1px solid #e6eaf0;
@@ -317,6 +366,23 @@
       color: #1a2942;
     }
 
+    .profiel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 14px; }
+    @media (max-width: 700px) { .profiel-grid { grid-template-columns: 1fr; } }
+    .profiel-card {
+      background: #fff; border: 1px solid #e6eaf0; border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .profiel-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #0a6cb1; margin-bottom: 6px;
+    }
+    .profiel-text { font-size: 14px; color: #1a2942; line-height: 1.55; }
+    .profiel-disclaimer {
+      margin-top: 14px; padding: 12px 16px; background: #f0f6fc;
+      border-left: 3px solid #0a6cb1; border-radius: 4px;
+      font-size: 13px; color: #4a5a76; line-height: 1.55;
+    }
+
     .voorwaarden {
       background: #fff;
       border: 1px solid #e6eaf0;
@@ -353,8 +419,9 @@
 
 <header>
   <div class="crumbs">
-    <a href="../index.html">2dehands wetsuits</a>
-    &nbsp;›&nbsp; deboer Fjord 3.0 Series 2 — Heren L
+    <a href="../index.html">Home</a>
+    &nbsp;›&nbsp; <a href="../index.html#heren-wetsuits">Heren wetsuits</a>
+    &nbsp;›&nbsp; deboer Fjord 3.0 Series 2 — Heren maat L
   </div>
 </header>
 
@@ -365,34 +432,28 @@
     <div class="gallery">
       <div class="main">
         <button class="nav-btn prev" aria-label="Vorige foto" onclick="navFoto(-1)">‹</button>
-        <img id="mainImage" src="fotos/deboer-fjord-3.0-A.jpg" alt="deboer Fjord 3.0 voorkant">
+        <img id="mainImage" src="fotos/fjord-promo-front-A.jpg" alt="deboer Fjord 3.0 Series 2 — vooraanzicht">
         <button class="nav-btn next" aria-label="Volgende foto" onclick="navFoto(1)">›</button>
-        <div class="counter"><span id="counterCurrent">1</span> / <span id="counterTotal">8</span></div>
+        <div class="counter"><span id="counterCurrent">1</span> / <span id="counterTotal">6</span></div>
       </div>
       <div class="gallery-thumbs" id="thumbsContainer">
-        <div data-src="fotos/deboer-fjord-3.0-A.jpg" data-alt="Voorkant" class="active">
-          <img src="fotos/deboer-fjord-3.0-A.jpg" alt="Voorkant">
+        <div data-src="fotos/fjord-promo-front-A.jpg" data-alt="deboer Fjord 3.0 Series 2 — vooraanzicht" class="active">
+          <img src="fotos/fjord-promo-front-A.jpg" alt="Vooraanzicht">
         </div>
-        <div data-src="fotos/deboer-fjord-3.0-D.jpg" data-alt="Achterkant">
-          <img src="fotos/deboer-fjord-3.0-D.jpg" alt="Achterkant">
+        <div data-src="fotos/fjord-promo-driekwart-rechts.jpg" data-alt="deboer Fjord 3.0 Series 2 — driekwart-zijaanzicht rechts">
+          <img src="fotos/fjord-promo-driekwart-rechts.jpg" alt="Driekwart rechts">
         </div>
-        <div data-src="fotos/deboer-fjord-3.0-B.jpg" data-alt="Zijaanzicht">
-          <img src="fotos/deboer-fjord-3.0-B.jpg" alt="Zijaanzicht">
+        <div data-src="fotos/fjord-promo-achterkant.jpg" data-alt="deboer Fjord 3.0 Series 2 — achteraanzicht met FJORD 3.0 SERIES 2 op de rits">
+          <img src="fotos/fjord-promo-achterkant.jpg" alt="Achterkant">
         </div>
-        <div data-src="fotos/deboer-trikipedia-1.jpg" data-alt="Atleet op strand">
-          <img src="fotos/deboer-trikipedia-1.jpg" alt="Atleet op strand">
+        <div data-src="fotos/fjord-promo-driekwart-links.jpg" data-alt="deboer Fjord 3.0 Series 2 — driekwart-zijaanzicht links">
+          <img src="fotos/fjord-promo-driekwart-links.jpg" alt="Driekwart links">
         </div>
-        <div data-src="fotos/deboer-press-tmag.jpg" data-alt="Atleet bij open water">
-          <img src="fotos/deboer-press-tmag.jpg" alt="Atleet bij open water">
+        <div data-src="fotos/fjord-promo-zittend-rotsen.jpg" data-alt="deboer Fjord 3.0 Series 2 — zittend op rotsen aan zee">
+          <img src="fotos/fjord-promo-zittend-rotsen.jpg" alt="Zittend op rotsen">
         </div>
-        <div data-src="fotos/deboer-rico-strand.jpg" data-alt="Rico Bogen in Fjord 3.0">
-          <img src="fotos/deboer-rico-strand.jpg" alt="Rico Bogen in Fjord 3.0">
-        </div>
-        <div data-src="fotos/deboer-detail-hexagon.jpg" data-alt="X-Skin hexagon close-up">
-          <img src="fotos/deboer-detail-hexagon.jpg" alt="X-Skin hexagon close-up">
-        </div>
-        <div data-src="fotos/deboer-fjord-3.0-C.jpg" data-alt="Achterkant 3/4">
-          <img src="fotos/deboer-fjord-3.0-C.jpg" alt="Achterkant 3/4">
+        <div data-src="fotos/fjord-promo-front-B.jpg" data-alt="deboer Fjord 3.0 Series 2 — vooraanzicht (variant)">
+          <img src="fotos/fjord-promo-front-B.jpg" alt="Vooraanzicht variant">
         </div>
       </div>
     </div>
@@ -404,7 +465,6 @@
       <div class="badges">
         <span class="badge gold">Topstaat (A)</span>
         <span class="badge green">2x gedragen</span>
-        <span class="badge green">Geen beschadigingen</span>
         <span class="badge blue">Inclusief doos + accessoires</span>
         <span class="badge amber">Topmodel 2023-2024</span>
       </div>
@@ -413,11 +473,13 @@
 
         <div class="price-koop">
           <span class="now">€&nbsp;549</span>
+          <span class="was-label">Nieuwprijs</span>
           <span class="was">€&nbsp;1.404</span>
           <span class="save">−61%</span>
         </div>
         <div class="extras-line">
-          Inclusief originele doos, witte handschoentjes en badmuts.
+          Inclusief originele doos, witte handschoentjes en badmuts.<br>
+          <span style="font-size: 12px; color: #6b7d97;">Huidige deboer Fjord 4.0-model: ca. €&nbsp;1.450 nieuw.</span>
         </div>
 
         <a class="cta"
@@ -439,13 +501,9 @@
             <tr><td>Hele week</td><td class="price">€ 115</td></tr>
           </tbody>
         </table>
-      </div>
-
-      <div class="size-link">
-        <strong>Twijfel je over de maat?</strong>
-        Bekijk de officiële
-        <a href="https://deboerwetsuits.com/pages/size-chart" target="_blank" rel="noopener">deboer maattabel (heren &amp; dames)</a>
-        voor exacte afmetingen per maat.
+        <div style="margin-top: 10px; padding: 10px 12px; background: #f6f9fc; border-radius: 6px; font-size: 12px; color: #4a5a76; line-height: 1.5;">
+          <strong style="color: #1a2942;">Borg:</strong> € 100 bij verhuur. Bij ongeschonden inlevering volledig terug — kleine nagelscheurtjes (≤ 10 cent-stuk) zijn geen probleem, dat is gewoon gebruik. Bij grotere scheuren worden reparatiekosten volgens onze <a href="../reparatie/" style="color: #0a6cb1;">reparatie-tarieven</a> van de borg ingehouden.
+        </div>
       </div>
 
     </div>
@@ -460,47 +518,80 @@
   </section>
 
   <section>
-    <h2>Conditie</h2>
-    <div class="conditie-card">
-      <ul>
-        <li><strong>Conditie-klasse: Topstaat (A)</strong> — vrijwel als nieuw</li>
-        <li><strong>2x gebruikt</strong>, geen beschadigingen, geen reparaties</li>
-        <li><strong>Originele doos meegeleverd</strong></li>
-        <li>Witte handschoentjes (om aan te trekken zonder nagelschade) erbij</li>
-        <li>Badmuts erbij</li>
-      </ul>
+    <h2>Voor wie is dit pak?</h2>
+    <div class="profiel-grid">
+      <div class="profiel-card">
+        <div class="profiel-label">Niveau</div>
+        <div class="profiel-text">Ambitieuze age-grouper en wedstrijd-triatleet of open-water-zwemmer. Wedstrijdgoedgekeurd onder IRONMAN, World Triathlon en ETU. Was van 2023–eind 2024 het topmodel van deboer.</div>
+      </div>
+      <div class="profiel-card">
+        <div class="profiel-label">Pasvorm</div>
+        <div class="profiel-text">Heren maat L. <a href="https://deboerwetsuits.com/pages/size-chart" target="_blank" rel="noopener">Officiële deboer-maattabel</a> voor exacte cijfers — deboer raadt zelf persoonlijk advies aan via hun Experience Team (info@deboerswim.com) bij twijfel tussen maten.</div>
+      </div>
+      <div class="profiel-card">
+        <div class="profiel-label">Type zwemmer</div>
+        <div class="profiel-text">Voor wie de extra fractie aan snelheid wil pakken. Het <strong>5mm X-Skin neopreen</strong> en de <strong>Propulsion Forearm</strong> zijn ontworpen om 5–10 sec/100m winst op te leveren bij ervaren zwemmers. Niet bedoeld voor zeer koud water (&lt; 14°C) — daarvoor is de Flōh-serie.</div>
+      </div>
+      <div class="profiel-card">
+        <div class="profiel-label">Sterkste punt voor jou</div>
+        <div class="profiel-text"><strong>Topkwaliteit voor 60% korting:</strong> €549 versus €1.404 nieuw, 2x gedragen, klasse A. Past bij de zwemmer die zonder concessie een premium hand-made pak wil zonder de volle nieuwprijs te betalen — investering voor meerdere seizoenen.</div>
+      </div>
+    </div>
+    <div class="profiel-disclaimer">
+      <strong>Twijfel je over de maat?</strong> Dit is een richtlijn — geen absolute regel. Bekijk de officiële <a href="https://deboerwetsuits.com/pages/size-chart" target="_blank" rel="noopener">deboer maattabel (heren &amp; dames)</a>, of huur het pak eerst (€&nbsp;25 / dag) om te ontdekken of het écht bij je past.
     </div>
   </section>
 
   <section>
-    <h2>Specs</h2>
-    <div class="specs-grid">
-      <div class="label">Conditie-klasse</div>
-      <div class="value highlight">Topstaat (A)</div>
+    <h2>Speciale features van de deboer Fjord 3.0 Series 2</h2>
+    <div class="tech-grid">
 
-      <div class="label">Type</div>
-      <div class="value">Triathlon / open-water full-suit</div>
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/fjord-promo-front-A.jpg" alt="Fjord 3.0 — X-Skin neopreen vooraanzicht"></div>
+        <div class="tech-card-body">
+          <h3>5 mm X-Skin neopreen</h3>
+          <div class="tech-sub">deboer's eigen schub-textuur</div>
+          <p>Het kenmerkende X-Skin neopreen heeft een geschubde structuur die volgens deboer de hydrodynamische weerstand verlaagt. Premium materiaal, exclusief van deboer — gebruikt in hun topmodellen.</p>
+        </div>
+      </div>
 
-      <div class="label">Maat</div>
-      <div class="value">L (heren) &nbsp;·&nbsp; <a href="https://deboerwetsuits.com/pages/size-chart" target="_blank" rel="noopener" style="font-size: 13px; font-weight: 500;">bekijk maattabel deboer</a></div>
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/fjord-promo-driekwart-rechts.jpg" alt="Fjord 3.0 — Propulsion Forearm onderarm-paneel"></div>
+        <div class="tech-card-body">
+          <h3>Propulsion Forearm</h3>
+          <div class="tech-sub">Meer water grijpen per slag</div>
+          <p>De onderarmen zijn gevormd met extra grip-zones om meer water te "pakken" tijdens elke slag — krachtigere voortstuwing, vergelijkbaar met paddle-effect bij ervaren zwemmers.</p>
+        </div>
+      </div>
 
-      <div class="label">Neopreen torso & benen</div>
-      <div class="value">5mm X-Skin (proprietary, scale-array texture)</div>
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/fjord-promo-driekwart-links.jpg" alt="Fjord 3.0 — schouder-panelen voor maximale mobiliteit"></div>
+        <div class="tech-card-body">
+          <h3>Redesigned shoulder sleeves</h3>
+          <div class="tech-sub">Maximale schoudermobiliteit</div>
+          <p>De mouwen en schouder-panelen zijn herontworpen voor maximale arm-vrijheid zonder warmteverlies — soepele slag bij vol vermogen, geen "vastzit"-gevoel bij hoge cadans.</p>
+        </div>
+      </div>
 
-      <div class="label">Kraag</div>
-      <div class="value">3.5mm GlideSkin + super-stretch panel</div>
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/fjord-promo-achterkant.jpg" alt="Fjord 3.0 — GlideSkin kraag en rits-detail"></div>
+        <div class="tech-card-body">
+          <h3>3,5 mm GlideSkin kraag</h3>
+          <div class="tech-sub">Lekvrij en comfortabel</div>
+          <p>Een 3,5 mm GlideSkin kraag met super-stretch panel sluit comfortabel rond de hals zonder te knellen of te lekken — geen koude-shock bij elke duik onder water.</p>
+        </div>
+      </div>
 
-      <div class="label">Speciale features</div>
-      <div class="value">Propulsion Forearm · redesigned shoulder sleeves</div>
+    </div>
+  </section>
 
-      <div class="label">Goedkeuring</div>
-      <div class="value">IRONMAN · World Triathlon · ETU</div>
-
-      <div class="label">Release-jaar</div>
-      <div class="value">2023</div>
-
-      <div class="label">Oorspronkelijke nieuwprijs</div>
-      <div class="value">€ 1.404</div>
+  <section>
+    <h2>Conditie</h2>
+    <div class="conditie-card">
+      <ul>
+        <li><strong>Conditie-klasse: Topstaat (A)</strong></li>
+        <li><strong>2x door eigenaar getest</strong> — verder als nieuw, inclusief originele doos, witte handschoentjes (om aan te trekken zonder nagelschade) en deboer-badmuts</li>
+      </ul>
     </div>
   </section>
 
@@ -536,12 +627,47 @@
   </section>
 
   <section>
+    <h2>Specs</h2>
+    <div class="specs-grid">
+      <div class="label">Merk</div>
+      <div class="value">deboer wetsuits (USA)</div>
+
+      <div class="label">Model</div>
+      <div class="value">Fjord 3.0 Series 2 — herenmodel, topmodel 2023–2024</div>
+
+      <div class="label">Type</div>
+      <div class="value">Triathlon / open-water full-suit</div>
+
+      <div class="label">Maat</div>
+      <div class="value">L (heren) &nbsp;·&nbsp; <a href="https://deboerwetsuits.com/pages/size-chart" target="_blank" rel="noopener" style="font-size: 13px; font-weight: 500;">bekijk maattabel deboer</a></div>
+
+      <div class="label">Materiaal</div>
+      <div class="value">5 mm X-Skin neopreen (deboer's eigen scale-array textuur)</div>
+
+      <div class="label">Buoyancy-profiel</div>
+      <div class="value">5 mm X-Skin torso en benen &nbsp;·&nbsp; 3,5 mm GlideSkin kraag met super-stretch panel</div>
+
+      <div class="label">Speciale features</div>
+      <div class="value">Propulsion Forearm &nbsp;·&nbsp; redesigned shoulder sleeves voor maximale schoudermobiliteit</div>
+
+      <div class="label">Wedstrijdgoedkeuring</div>
+      <div class="value">IRONMAN · World Triathlon · ETU</div>
+
+      <div class="label">Release-jaar</div>
+      <div class="value">2023 (opgevolgd door Fjord 4.0 eind 2024)</div>
+
+      <div class="label">Officiële nieuwprijs</div>
+      <div class="value">€ 1.404</div>
+    </div>
+  </section>
+
+  <section>
     <h2>Garantie en restitutie</h2>
     <div class="voorwaarden">
       <ul>
         <li><strong>Geen garantie</strong> bij tweedehands wetsuits — dat is inherent aan een 2dehands-aankoop.</li>
         <li><strong>Vooraf bekijken kan altijd.</strong> Je kunt het pak komen passen of bezichtigen voordat je beslist.</li>
-        <li><strong>Vraag gerust foto's van het werkelijke pak of meer informatie.</strong> De afbeeldingen op deze pagina zijn officiële merkfoto's en voorbeeldbeelden van de Fjord 3.0 — niet van dit specifieke exemplaar. Wil je foto's van dit exacte pak zien (rits, eventuele gebruikssporen, etc.)? Stuur een berichtje, dan stuur ik die naar je toe.</li>
+        <li><strong>De foto's zijn vergelijkbaar met het werkelijke pak — niet het identieke exemplaar.</strong></li>
         <li><strong>Eenmaal gekocht is gekocht.</strong> Geen restitutie achteraf.</li>
         <li><strong>Twijfel je?</strong> Huur het pak dan eerst (de huurprijzen staan bovenaan op deze pagina) en beslis daarna of je het wilt kopen. Zo ben je 100% zeker.</li>
       </ul>
@@ -558,15 +684,7 @@
   </section>
 
   <div class="credits">
-    <strong>Foto-bronnen en disclaimer</strong><br>
-    Alle foto's tonen de deboer Fjord 3.0 of zijn deboer-eigen reclamemateriaal. © deboer wetsuits — gebruikt voor de presentatie van een 2dehands deboer Fjord 3.0 wetsuit aangeboden door <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>.
-    <ul style="margin-left: 20px; margin-top: 6px;">
-      <li>Productshots (mannequin, voor/achter/zij): <a href="https://deboerswim.com/products/mens-fjord-3-0">deboerswim.com (Men's Fjord 3.0)</a></li>
-      <li>Atleet op strand met zonnebril: deboer-persfoto via <a href="https://trikipedia.nl/2024/03/06/deboer-fjord-3-0-wetsuit-test-een-verloren-weddenschap/">Trikipedia.nl review</a></li>
-      <li>Atleet bij open water: deboer-persfoto via <a href="https://triathlonmagazine.ca/gear/deboer-launches-new-fjord-3-0-suit/">Triathlon Magazine Canada</a></li>
-      <li>Rico Bogen op strand: <a href="https://deboerswim.com/blogs/updates/elite-triathlete-rico-bogen-collaborates-with-deboer-for-ultimate-performance">deboer blog — Rico Bogen collaboration</a></li>
-      <li>X-Skin hexagon close-up: <a href="https://trikipedia.nl/2024/03/06/deboer-fjord-3-0-wetsuit-test-een-verloren-weddenschap/">Trikipedia.nl review</a></li>
-    </ul>
+    <strong>Disclaimer:</strong> Promotionele foto's vergelijkbaar met het aangeboden pak. Kleurstellingen en details kunnen iets afwijken van het wetsuit dat wij te koop aanbieden op deze pagina.
   </div>
 
 </div>

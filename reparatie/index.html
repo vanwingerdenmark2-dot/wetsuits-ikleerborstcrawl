@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wetsuit-reparatie — tarieven | Wetsuits IkLeerBorstcrawl</title>
+  <meta name="description" content="Wetsuit-reparatie: vanaf €12,50 voor kleine scheurtjes, €25 voor grote scheuren. 30 dagen garantie. Voor eigen klanten én externe klanten.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a2942;
+      background: #f6f9fc;
+      line-height: 1.55;
+    }
+    a { color: #0a6cb1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6eaf0;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .crumbs { font-size: 14px; color: #6b7d97; }
+    .crumbs a { color: #6b7d97; }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    .hero-block {
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+    }
+    .hero-block h1 {
+      font-size: 28px;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .hero-block .sub {
+      color: #6b7d97;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .hero-block p { color: #4a5a76; margin-bottom: 10px; }
+    .hero-block p:last-child { margin-bottom: 0; }
+
+    section { margin-top: 40px; }
+    section h2 { font-size: 22px; margin-bottom: 14px; letter-spacing: -0.01em; }
+    section p { margin-bottom: 12px; color: #4a5a76; }
+
+    .tarieven-tabel {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+    .tarieven-tabel th {
+      background: #1a2942;
+      color: #fff;
+      text-align: left;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .tarieven-tabel td {
+      padding: 16px 18px;
+      border-bottom: 1px solid #f0f3f7;
+      vertical-align: top;
+    }
+    .tarieven-tabel tr:last-child td { border-bottom: none; }
+    .tarieven-tabel .cat {
+      font-weight: 700;
+      color: #1a2942;
+      width: 22%;
+      white-space: nowrap;
+    }
+    .tarieven-tabel .desc { color: #4a5a76; width: 48%; }
+    .tarieven-tabel .prijs {
+      font-weight: 700;
+      color: #1a2942;
+      text-align: right;
+      width: 30%;
+      white-space: nowrap;
+    }
+    .tarieven-tabel .prijs small {
+      display: block;
+      color: #6b7d97;
+      font-weight: 500;
+      font-size: 12px;
+      margin-top: 4px;
+      white-space: normal;
+    }
+
+    .voorbeelden {
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-top: 14px;
+    }
+    .voorbeelden ul {
+      list-style: none;
+      padding: 0;
+    }
+    .voorbeelden li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f3f7;
+      font-size: 14px;
+    }
+    .voorbeelden li:last-child { border-bottom: none; }
+    .voorbeelden li strong { color: #1a2942; font-weight: 600; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (max-width: 700px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-card {
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .info-card .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0a6cb1;
+      margin-bottom: 6px;
+    }
+    .info-card .text { font-size: 14px; color: #1a2942; line-height: 1.55; }
+
+    .werkwijze {
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-top: 14px;
+    }
+    .werkwijze ol {
+      counter-reset: stap;
+      list-style: none;
+      padding: 0;
+    }
+    .werkwijze li {
+      counter-increment: stap;
+      position: relative;
+      padding-left: 38px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      color: #4a5a76;
+      line-height: 1.55;
+    }
+    .werkwijze li:last-child { margin-bottom: 0; }
+    .werkwijze li::before {
+      content: counter(stap);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 26px;
+      height: 26px;
+      background: #1a2942;
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .werkwijze li strong { color: #1a2942; }
+
+    .borg-blok {
+      margin-top: 14px;
+      padding: 18px 22px;
+      background: #fff2c2;
+      border: 1px solid #f0d573;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #1a2942;
+      line-height: 1.6;
+    }
+    .borg-blok strong { color: #1a2942; }
+
+    .extern-blok {
+      margin-top: 14px;
+      padding: 18px 22px;
+      background: #e6f0fb;
+      border-left: 3px solid #0a6cb1;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #1a2942;
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      margin-top: 48px;
+      text-align: center;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta:hover { background: #1ea854; text-decoration: none; }
+    .cta-sub { color: #6b7d97; font-size: 13px; margin-top: 12px; }
+
+    footer {
+      border-top: 1px solid #e6eaf0;
+      background: #fff;
+      padding: 24px;
+      color: #6b7d97;
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="crumbs">
+    <a href="../index.html">Home</a>
+    &nbsp;›&nbsp; Reparatieservice
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero-block">
+    <h1>Wetsuit-reparatie — tarieven</h1>
+    <div class="sub">Snel, eerlijk geprijsd, met 30 dagen garantie</div>
+    <p>Een nagelscheurtje of scheur in je wetsuit? Geen probleem. We repareren met neopreenlijm en originele tape, zodat je pak weer waterdicht en flexibel is. Voor eigen huur- en koopklanten van IkLeerBorstcrawl, en ook voor externe klanten met een eigen kapot pak.</p>
+  </div>
+
+  <section>
+    <h2>Tarieven</h2>
+    <table class="tarieven-tabel">
+      <thead>
+        <tr>
+          <th>Categorie</th>
+          <th>Wat is het?</th>
+          <th style="text-align: right;">Prijs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cat">Klein</td>
+          <td class="desc">Nagelscheurtje of gaatje tot ongeveer een 10 cent-stuk groot (ca. 16 mm). Niet door het neopreen heen.</td>
+          <td class="prijs">€&nbsp;12,50<small>1–2 scheurtjes inbegrepen<br>vanaf het 3e: + €&nbsp;5 per stuk</small></td>
+        </tr>
+        <tr>
+          <td class="cat">Groot</td>
+          <td class="desc">Scheur groter dan een 10 cent-stuk, of helemaal door het neopreen heen. Inclusief lijmen aan beide zijden + tape-versteviging aan de binnenkant.</td>
+          <td class="prijs">€&nbsp;25,00<small>per scheur</small></td>
+        </tr>
+        <tr>
+          <td class="cat">Speciaal</td>
+          <td class="desc">Scheur groter dan 5 cm, naden, ritsvervanging of paneel-werk.</td>
+          <td class="prijs">Op aanvraag<small>richtprijs €&nbsp;30–50 voor naden / grote scheuren<br>€&nbsp;60–100 voor rits-werk</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Voorbeelden</h2>
+    <div class="voorbeelden">
+      <ul>
+        <li><strong>1 klein scheurtje</strong><span>€ 12,50</span></li>
+        <li><strong>2 kleine scheurtjes</strong><span>€ 12,50</span></li>
+        <li><strong>3 kleine scheurtjes</strong><span>€ 17,50</span></li>
+        <li><strong>5 kleine scheurtjes</strong><span>€ 27,50</span></li>
+        <li><strong>1 grote scheur</strong><span>€ 25,00</span></li>
+        <li><strong>1 grote scheur + 2 kleine scheurtjes</strong><span>€ 37,50</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Doorlooptijd &amp; garantie</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Doorlooptijd — klein</div>
+        <div class="text">Klaar in <strong>2 werkdagen</strong> (incl. 24 uur droogtijd voor optimale waterdichtheid).</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Doorlooptijd — groot</div>
+        <div class="text">Klaar in <strong>3 werkdagen</strong> (incl. 48 uur droogtijd, lijmen aan beide zijden).</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Doorlooptijd — speciaal</div>
+        <div class="text">In overleg, doorgaans <strong>3–7 werkdagen</strong> afhankelijk van het werk.</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Garantie — 30 dagen</div>
+        <div class="text">Loslaat de scheur op dezelfde plek binnen 30 dagen na reparatie? <strong>Gratis opnieuw.</strong> Je hebt zekerheid dat het echt goed gefixt is.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Hoe werkt het?</h2>
+    <div class="werkwijze">
+      <ol>
+        <li><strong>Stuur een foto via WhatsApp</strong> met een korte omschrijving van de schade (waar zit het, hoe groot is het ongeveer).</li>
+        <li><strong>Prijsopgave binnen 24 uur</strong> — je krijgt een vast bedrag of, bij speciale gevallen, een richtprijs.</li>
+        <li><strong>Akkoord en pak afgeven</strong> — afhalen, langsbrengen of opsturen, in overleg.</li>
+        <li><strong>Reparatie + droogtijd</strong> volgens bovenstaande doorlooptijd.</li>
+        <li><strong>Pak retour, betaling via Tikkie.</strong> Klaar voor het volgende seizoen.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wat gebruiken we?</h2>
+    <p>Neopreenlijm voor de basislaag, originele neopreen-reparatietape voor versteviging, en bij grotere scheuren extra binnenwerk om de scheur dicht én flexibel te houden. Geen "hobby-spul" — materiaal dat ook professionele wetsuit-fabrikanten gebruiken voor hun eigen herstelwerk.</p>
+  </section>
+
+  <section>
+    <h2>Bij verhuur via IkLeerBorstcrawl</h2>
+    <div class="borg-blok">
+      <p style="margin-bottom: 8px;"><strong>Borg: € 100 per huurperiode.</strong> Bij ongeschonden inlevering volledig terug.</p>
+      <p style="margin-bottom: 8px;"><strong>Kleine nagelscheurtjes (≤ 10 cent-stuk) zijn geen probleem</strong> — dat is normaal gebruik en kost je niks. Geen inhouding op de borg.</p>
+      <p style="margin: 0;"><strong>Bij grotere scheuren of meerdere kleine scheurtjes</strong> worden de reparatiekosten volgens bovenstaande tarieven van de borg ingehouden. Bij twijfel maken we samen foto's bij inname én bij retour, zodat je zeker weet dat het eerlijk gaat.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eigen pak, kapot? Welkom.</h2>
+    <div class="extern-blok">
+      <p style="margin-bottom: 8px;">Heb je zelf een wetsuit (gekocht waar dan ook) en is die kapot? Dan is deze service ook voor jou. Stuur een foto via WhatsApp en je krijgt een vaste prijsopgave binnen 24 uur.</p>
+      <p style="margin: 0;"><strong>Werkt voor alle merken</strong> — Zone3, ROKA, deboer, Dare 2 Tri, Orca, BlueSeventy, Sailfish, etc. Triathlon-wetsuits, openwater-pakken en surfpakken van neopreen.</p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Klaar om je pak te laten repareren?</h2>
+    <p style="text-align: center; max-width: 480px; margin: 0 auto 18px;">Stuur een foto en korte omschrijving via WhatsApp. Je krijgt doorgaans binnen een paar uur antwoord.</p>
+    <a class="cta" href="https://wa.me/31641891443?text=Hoi%2C%20ik%20wil%20graag%20mijn%20wetsuit%20laten%20repareren.%20Hier%20is%20een%20foto%20%2B%20omschrijving%20van%20de%20schade%3A">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      WhatsApp ons
+    </a>
+    <div class="cta-sub">06 41 89 14 43 · Reactie doorgaans binnen een paar uur</div>
+  </section>
+
+</div>
+
+<footer>
+  Onderdeel van <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>
+  · Wetsuit-reparatie en 2dehands wetsuits
+</footer>
+
+</body>
+</html>
