@@ -309,9 +309,67 @@
       border-top: 1px solid #e6eaf0; background: #fff;
       padding: 24px; color: #6b7d97; font-size: 13px; text-align: center;
     }
+
+    /* === Status-label-systeem voor detailpagina === */
+    .status-banner {
+      display: none;
+    }
+    .page-status .status-banner {
+      display: block;
+      padding: 16px 20px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+      box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.18),
+        0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    }
+    .page-status .status-banner .sub {
+      display: block;
+      font-weight: 500;
+      font-size: 13px;
+      margin-top: 4px;
+      letter-spacing: 0;
+      opacity: 0.95;
+    }
+    .page-status.status-reserved .status-banner {
+      background: linear-gradient(180deg, #fbbf24 0%, #d97706 55%, #92400e 100%);
+    }
+    .page-status.status-sold .status-banner {
+      background: linear-gradient(180deg, #ef4444 0%, #b91c1c 55%, #7f1d1d 100%);
+    }
+    .page-status .rent-table {
+      position: relative;
+      opacity: 0.5;
+    }
+    .page-status .rent-table::after {
+      content: "Verhuur niet beschikbaar zolang dit pak gereserveerd is";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+      font-size: 13px;
+      color: #4a5a76;
+      text-align: center;
+      padding: 0 12px;
+    }
+    .page-status.status-sold .rent-table::after {
+      content: "Verhuur niet beschikbaar — dit pak is verkocht";
+    }
   </style>
 </head>
-<body>
+<body class="page-status status-reserved" data-status-label="GERESERVEERD">
+
+  <div class="status-banner">
+    Dit pak is op dit moment gereserveerd
+    <span class="sub">Een andere klant is bezig dit pak te passen. Laat je naam achter voor de wachtlijst — als de reservering niet doorgaat krijg jij eerste kans.</span>
+  </div>
 
 <header>
   <div class="crumbs">
@@ -376,7 +434,7 @@
         </div>
 
         <a class="cta"
-           href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20interesse%20in%20de%20Dare%202%20Tri%20Mach%203%20FM%20dames%20maat%20M%20-%20kun%20je%20me%20meer%20vertellen%3F">
+           href="https://wa.me/31641891443?text=Hoi%2C%20ik%20wil%20graag%20op%20de%20wachtlijst%20voor%20de%20Dare%202%20Tri%20Mach%203%20FM%20dames%20maat%20M.">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           Stuur me een berichtje op WhatsApp
         </a>
@@ -510,7 +568,7 @@
     <h2>Vragen?</h2>
     <p>Stuur een berichtje op WhatsApp en we reageren doorgaans binnen een paar uur. Bezichtigen of passen kan in overleg.</p>
     <a class="cta" style="max-width: 360px;"
-       href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20interesse%20in%20de%20Dare%202%20Tri%20Mach%203%20FM%20dames%20maat%20M%20-%20kun%20je%20me%20meer%20vertellen%3F">
+       href="https://wa.me/31641891443?text=Hoi%2C%20ik%20wil%20graag%20op%20de%20wachtlijst%20voor%20de%20Dare%202%20Tri%20Mach%203%20FM%20dames%20maat%20M.">
       WhatsApp ons
     </a>
   </section>

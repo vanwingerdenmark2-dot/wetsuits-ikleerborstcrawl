@@ -232,6 +232,64 @@
       text-decoration: none;
     }
 
+    /* === Status-label-systeem (herbruikbaar voor reserved + sold) === */
+    .card-status {
+      position: relative;
+      overflow: hidden;
+    }
+    .card-status .photo {
+      position: relative;
+    }
+    .card-status .photo::after {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      padding: 9px 0;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+      border-radius: 4px;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.25) inset,
+        0 6px 14px rgba(0, 0, 0, 0.35),
+        0 2px 4px rgba(0, 0, 0, 0.22);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .card-status.status-reserved .photo::after {
+      content: "GERESERVEERD";
+      background: linear-gradient(180deg, #fbbf24 0%, #d97706 55%, #92400e 100%);
+    }
+    .card-status.status-sold .photo::after {
+      content: "VERKOCHT";
+      background: linear-gradient(180deg, #ef4444 0%, #b91c1c 55%, #7f1d1d 100%);
+    }
+    .card-status .photo img {
+      filter: saturate(0.7) brightness(0.92);
+    }
+    .card-status .cta {
+      background: #6b7d97;
+    }
+    .card-status .cta:hover {
+      background: #4a5a76;
+    }
+    .card-status.status-reserved .cta::after {
+      content: " (op wachtlijst)";
+      font-weight: 400;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    .card-status.status-sold .cta::after {
+      content: " (verkocht)";
+      font-weight: 400;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
     .info-block {
       margin-top: 48px;
       background: #fff;
@@ -505,7 +563,7 @@
     </a>
 
     <!-- Dare 2 Tri Mach 3 FM -->
-    <a href="dare2tri-mach3-fm-dames-m/" class="card" data-categorie="dames" data-prijs="139" data-volgnr="2" style="color: inherit;">
+    <a href="dare2tri-mach3-fm-dames-m/" class="card card-status status-reserved" data-status-label="GERESERVEERD" data-categorie="dames" data-prijs="139" data-volgnr="2" style="color: inherit;">
       <div class="photo">
         <img src="dare2tri-mach3-fm-dames-m/fotos/d2t-mach3-fm-voorkant.jpg" alt="Dare 2 Tri Mach 3 FM">
       </div>
@@ -550,7 +608,7 @@
     </a>
 
     <!-- Zone3 Vision -->
-    <a href="zone3-vision-dames-m/" class="card" data-categorie="dames" data-prijs="99" data-volgnr="4" style="color: inherit;">
+    <a href="zone3-vision-dames-m/" class="card card-status status-reserved" data-status-label="GERESERVEERD" data-categorie="dames" data-prijs="99" data-volgnr="4" style="color: inherit;">
       <div class="photo">
         <img src="zone3-vision-dames-m/fotos/zone3-vision-voorkant.jpg" alt="Zone3 Vision">
       </div>
@@ -596,7 +654,7 @@
     </a>
 
     <!-- BlueSeventy Helix -->
-    <a href="blueseventy-helix-dames-xs/" class="card" data-categorie="dames" data-prijs="169" data-volgnr="6" style="color: inherit;">
+    <a href="blueseventy-helix-dames-xs/" class="card card-status status-reserved" data-status-label="GERESERVEERD" data-categorie="dames" data-prijs="169" data-volgnr="6" style="color: inherit;">
       <div class="photo">
         <img src="blueseventy-helix-dames-xs/fotos/helix-voorkant.jpg" alt="BlueSeventy Helix">
       </div>

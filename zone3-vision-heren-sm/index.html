@@ -111,9 +111,63 @@
     .credits a { color: #6b7d97; text-decoration: underline; }
 
     footer { border-top: 1px solid #e6eaf0; background: #fff; padding: 24px; color: #6b7d97; font-size: 13px; text-align: center; }
+
+    /* === Status-label-systeem voor detailpagina === */
+    .status-banner {
+      display: none;
+    }
+    .page-status .status-banner {
+      display: block;
+      padding: 16px 20px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+      box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.18),
+        0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    }
+    .page-status .status-banner .sub {
+      display: block;
+      font-weight: 500;
+      font-size: 13px;
+      margin-top: 4px;
+      letter-spacing: 0;
+      opacity: 0.95;
+    }
+    .page-status.status-reserved .status-banner {
+      background: linear-gradient(180deg, #fbbf24 0%, #d97706 55%, #92400e 100%);
+    }
+    .page-status.status-sold .status-banner {
+      background: linear-gradient(180deg, #ef4444 0%, #b91c1c 55%, #7f1d1d 100%);
+    }
+    .page-status .rent-table {
+      position: relative;
+      opacity: 0.5;
+    }
+    .page-status .rent-table::after {
+      content: "Verhuur niet beschikbaar zolang dit pak gereserveerd is";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+      font-size: 13px;
+      color: #4a5a76;
+      text-align: center;
+      padding: 0 12px;
+    }
+    .page-status.status-sold .rent-table::after {
+      content: "Verhuur niet beschikbaar — dit pak is verkocht";
+    }
   </style>
 </head>
 <body>
+
 
 <header>
   <div class="crumbs">
