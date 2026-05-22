@@ -16,6 +16,11 @@
   to = "/roka-maverick-mx-gen1-dames-m/"
   status = 301
 
+[[redirects]]
+  from = "/_archief/*"
+  to = "/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

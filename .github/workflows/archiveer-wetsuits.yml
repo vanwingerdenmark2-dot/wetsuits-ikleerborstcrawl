@@ -1,0 +1,29 @@
+name: Archiveer verkochte wetsuits
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  archiveer:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Archiveer verkochte wetsuits ouder dan 3 weken
+        run: python scripts/archiveer-verkochte-wetsuits.py
+
+      - name: Commit en push als er wijzigingen zijn
+        run: |
+          git config user.name "Bas Vermeer"
+          git config user.email "vanwingerdenmark2@gmail.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Auto: verkochte wetsuits gearchiveerd (>3 weken)"
+          git push
