@@ -23,7 +23,7 @@ Drie stelregels van Mark, woord voor woord:
 
 1. **"Iets wat je niet weet, komt er niet bij."** Geen "onbekend", geen "niet beschikbaar online", geen "vraag via WhatsApp" om een gat te vullen. Gewoon weglaten.
 2. **"Goede dingen zet je erop. Slechte dingen laat je weg zonder te lachen."** Klinkt cynisch, is gewoon hoe verkoop werkt.
-3. **"De klasse-aanduiding zegt al wat de koper mag verwachten."** Klasse B = max 1-2 kleine reparaties. Daar hoef je niet bij te schrijven dat dit pak één scheurtje van 1,5 cm heeft. De klasse-uitleg op de pagina zelf doet dat werk al.
+3. **"De klasse-aanduiding zegt al wat de koper mag verwachten."** Klasse B = enkele kleine reparaties. Daar hoef je niet bij te schrijven dat dit pak één scheurtje van 1,5 cm heeft. De klasse-uitleg op de pagina zelf doet dat werk al.
 
 Concreet: vermeld een specifieke conditie-issue **maximaal één keer** en alleen in het conditie-blok. Verstop het niet, maar maak er geen marketing-thema van.
 
@@ -394,7 +394,7 @@ Elke pagina bevat dezelfde "Wat betekent tweedehands?"-sectie. Alleen de **actie
 <div class="klasse-card active">  <!-- alleen op actieve klasse -->
   <span class="klasse-letter">B</span>
   <div class="klasse-name">Middenklasse</div>
-  <div class="klasse-desc">Maximaal 1 of 2 kleine, professioneel uitgevoerde reparaties...</div>
+  <div class="klasse-desc">Enkele kleine, professioneel uitgevoerde reparaties...</div>
 </div>
 ```
 
