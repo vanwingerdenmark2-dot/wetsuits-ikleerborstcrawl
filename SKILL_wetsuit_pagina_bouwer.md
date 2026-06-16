@@ -230,6 +230,16 @@ CSS-classes: `.profiel-grid`, `.profiel-card`, `.profiel-label`, `.profiel-text`
 - Lange uitleg over reparatie-procedure — staat op de aparte reparatiepagina.
 - Schade-info uit ChatGPT-chats of andere research-bronnen overnemen. Die data is een momentopname die op het moment van publicatie achterhaald kan zijn (Mark heeft het pak in tussentijd misschien meer gebruikt). **Alléén Mark's actuele instructie is bron voor schade-beschrijving.**
 
+### Gloednieuw / ongebruikt pak (nieuw in verpakking)
+
+Soms is een pak gloednieuw, ongebruikt, nog in de verpakking met kaartjes. Dat valt buiten het A/B/C-tweedehands-verhaal, maar de site-structuur (klasse-grid) blijft hetzelfde. Aanpak:
+
+- **Klasse-badge:** Topstaat (A) — de hoogste tier. Daarnaast max. 2 positieve badges: `green` "Nieuw — nooit gebruikt" en `blue` "Compleet met kaartjes".
+- **Conditie-blok:** klasse-regel (A) + één tweede `<li>` die de nieuwstaat benoemt, bv. *"Nieuw en ongebruikt — compleet in de originele verpakking met kaartjes, nog nooit gedragen of uitgepakt."* (dit is Mark's expliciete, positieve info — toegestaan.)
+- **Klasse-grid (Wat betekent tweedehands?):** A actief, plus de `.extra-info` herschrijven naar een nieuw-melding: *"Let op: dit specifieke pak valt buiten het tweedehands-verhaal — het is gloednieuw en ongebruikt … Topstaat (A) is hier dus letterlijk: nieuwstaat."*
+- **Prijs:** doorgehaalde prijs met label "Nieuwprijs" (de officiële winkelprijs). Save-% alleen tonen als korting > ~30% (zie sectie 2) — bij een nieuw pak is de marge vaak kleiner, dan geen save-badge.
+- Voorbeeld: `huub-alta-heren-xl` (gebouwd 2026-06-16).
+
 ---
 
 ## 6. Specs-blok — alleen wat we weten
