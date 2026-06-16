@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Soto T1 First Wave — tweedelig systeem · Heren maat 5/6 | Wetsuits IkLeerBorstcrawl</title>
+  <meta name="description" content="De Soto T1 First Wave tweedelig wetsuit-systeem — Bibjohn (maat 5) + Pullover én Speedvest (maat 6). GreenGoma limestone-neopreen, geïmporteerd uit de VS, in goede staat (Middenklasse B). Warm én koud water dankzij twee tops.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a2942;
+      background: #f6f9fc;
+      line-height: 1.55;
+    }
+    a { color: #0a6cb1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6eaf0;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .crumbs { font-size: 14px; color: #6b7d97; }
+    .crumbs a { color: #6b7d97; }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+    @media (max-width: 800px) { .hero { grid-template-columns: 1fr; } }
+
+    .gallery { display: flex; flex-direction: column; gap: 12px; }
+
+    .gallery .main {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(20,40,80,0.08);
+      background: #fff;
+      overflow: hidden;
+    }
+    .gallery .main img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid #e6eaf0;
+      border-radius: 50%;
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a2942;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(20,40,80,0.12);
+      transition: background 0.15s, transform 0.1s;
+      user-select: none;
+    }
+    .nav-btn:hover { background: #fff; transform: translateY(-50%) scale(1.05); }
+    .nav-btn.prev { left: 12px; }
+    .nav-btn.next { right: 12px; }
+    .counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(26,41,66,0.85);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .gallery-thumbs { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .gallery-thumbs > div {
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(20,40,80,0.06);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .gallery-thumbs > div:hover { transform: scale(1.04); }
+    .gallery-thumbs > div.active { border-color: #0a6cb1; }
+    .gallery-thumbs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info h1 { font-size: 28px; letter-spacing: -0.01em; margin-bottom: 6px; }
+    .info .sub { color: #6b7d97; font-size: 15px; margin-bottom: 18px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+    .badge {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .badge.green { background: #e6f3ec; color: #1f7a3f; }
+    .badge.blue { background: #e6f0fb; color: #0a4d8f; }
+    .badge.amber { background: #fdf3e0; color: #8a5a05; }
+    .badge.gold { background: #fff2c2; color: #7a5a00; border: 1px solid #f0d573; }
+
+    .price-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 22px; margin-top: 8px; }
+    .price-koop { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 8px; }
+    .price-koop .now { width: 100%; font-size: 40px; font-weight: 700; color: #1a2942; line-height: 1; margin-bottom: 4px; }
+    .price-koop .was-label { font-size: 13px; color: #6b7d97; }
+    .price-koop .was { text-decoration: line-through; color: #8e9bb1; font-size: 16px; }
+    .price-koop .save { background: #fff2c2; color: #8a5a05; font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .extras-line { color: #4a5a76; font-size: 14px; margin-bottom: 18px; }
+
+    .cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; background: #25D366; color: #fff;
+      padding: 14px 22px; border-radius: 8px;
+      font-size: 16px; font-weight: 600; text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta:hover { background: #1ea854; text-decoration: none; }
+    .cta-sub { text-align: center; color: #6b7d97; font-size: 13px; margin-top: 10px; }
+
+    .rent-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+    .rent-table td { text-align: left; padding: 8px 0; border-bottom: 1px solid #f0f3f7; }
+    .rent-table td.price { font-weight: 700; text-align: right; }
+
+    .size-link {
+      margin-top: 18px; padding: 14px 16px;
+      background: #f0f6fc; border-left: 3px solid #0a6cb1; border-radius: 4px;
+      font-size: 14px; color: #1a2942; line-height: 1.55;
+    }
+    .size-link strong { display: block; margin-bottom: 4px; }
+
+    section { margin-top: 48px; }
+    section h2 { font-size: 22px; margin-bottom: 14px; letter-spacing: -0.01em; }
+    section p { margin-bottom: 12px; }
+
+    .specs-grid {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 0;
+      background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; overflow: hidden;
+    }
+    .specs-grid > div { padding: 12px 18px; border-bottom: 1px solid #f0f3f7; }
+    .specs-grid > div.label { color: #6b7d97; font-size: 14px; }
+    .specs-grid > div.value { font-weight: 500; }
+    .specs-grid > div:nth-last-child(-n+2) { border-bottom: none; }
+    .specs-grid > div.value.highlight { color: #7a5a00; font-weight: 700; }
+
+    /* Technologie-sectie: 2x2 grid met features */
+    .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px; }
+    @media (max-width: 700px) { .tech-grid { grid-template-columns: 1fr; } }
+    .tech-card { background: #1a2942; color: #fff; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+    .tech-card .tech-img { width: 100%; aspect-ratio: 16/9; background: #0a1525; overflow: hidden; }
+    .tech-card .tech-img img { width: 100%; height: 100%; object-fit: cover; }
+    .tech-card-body { padding: 16px 18px 18px; }
+    .tech-patented {
+      display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      color: #1a2942; background: #4ad9c6; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px;
+    }
+    .tech-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; letter-spacing: 0.01em; }
+    .tech-card .tech-sub { font-size: 12px; color: #4ad9c6; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+    .tech-card p { font-size: 13px; color: #c8d2e6; line-height: 1.55; margin: 0; }
+
+    .conditie-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 20px; }
+    .conditie-card ul { padding-left: 18px; }
+    .conditie-card li { margin-bottom: 6px; }
+
+    .klasse-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+    @media (max-width: 700px) { .klasse-grid { grid-template-columns: 1fr; } }
+    .klasse-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 10px; padding: 18px; position: relative; }
+    .klasse-card.active { border-color: #f0d573; background: #fffbe9; }
+    .klasse-letter {
+      display: inline-block; background: #1a2942; color: #fff;
+      width: 28px; height: 28px; border-radius: 50%; text-align: center;
+      line-height: 28px; font-weight: 700; font-size: 14px; margin-bottom: 8px;
+    }
+    .klasse-card.active .klasse-letter { background: #c79100; }
+    .klasse-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .klasse-desc { font-size: 13px; color: #4a5a76; line-height: 1.5; }
+    .klasse-card.active::before {
+      content: "Dit pak"; position: absolute; top: -10px; right: 14px;
+      background: #c79100; color: #fff; font-size: 11px; font-weight: 700;
+      padding: 3px 9px; border-radius: 999px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .extra-info {
+      margin-top: 14px; padding: 14px 16px; background: #f0f6fc;
+      border-left: 3px solid #0a6cb1; border-radius: 4px; font-size: 14px; color: #1a2942;
+    }
+
+    .profiel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 14px; }
+    @media (max-width: 700px) { .profiel-grid { grid-template-columns: 1fr; } }
+    .profiel-card {
+      background: #fff; border: 1px solid #e6eaf0; border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .profiel-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #0a6cb1; margin-bottom: 6px;
+    }
+    .profiel-text { font-size: 14px; color: #1a2942; line-height: 1.55; }
+    .profiel-disclaimer {
+      margin-top: 14px; padding: 12px 16px; background: #f0f6fc;
+      border-left: 3px solid #0a6cb1; border-radius: 4px;
+      font-size: 13px; color: #4a5a76; line-height: 1.55;
+    }
+
+    .voorwaarden { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 20px; }
+    .voorwaarden ul { padding-left: 18px; margin-top: 8px; }
+    .voorwaarden li { margin-bottom: 8px; }
+    .voorwaarden strong { color: #1a2942; }
+
+    .credits {
+      margin-top: 48px; padding: 20px; background: #f0f3f7; border-radius: 8px;
+      font-size: 12px; color: #6b7d97; line-height: 1.6;
+    }
+    .credits strong { color: #4a5a76; }
+    .credits a { color: #6b7d97; text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid #e6eaf0; background: #fff;
+      padding: 24px; color: #6b7d97; font-size: 13px; text-align: center;
+    }
+
+    .status-banner { display: none; }
+    .page-status .status-banner {
+      display: block; padding: 16px 20px; text-align: center;
+      font-weight: 700; font-size: 15px; letter-spacing: 0.04em;
+      color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18), 0 1px 0 rgba(255,255,255,0.2) inset;
+    }
+    .page-status .status-banner .sub {
+      display: block; font-weight: 500; font-size: 13px;
+      margin-top: 4px; letter-spacing: 0; opacity: 0.95;
+    }
+    .page-status.status-reserved .status-banner {
+      background: linear-gradient(180deg, #fbbf24 0%, #d97706 55%, #92400e 100%);
+    }
+    .page-status.status-sold .status-banner {
+      background: linear-gradient(180deg, #ef4444 0%, #b91c1c 55%, #7f1d1d 100%);
+    }
+    .page-status .rent-table { position: relative; opacity: 0.5; }
+    .page-status .rent-table::after {
+      content: "Verhuur niet beschikbaar zolang dit pak gereserveerd is";
+      position: absolute; inset: 0; display: flex; align-items: center;
+      justify-content: center; background: rgba(255,255,255,0.85);
+      font-weight: 600; font-size: 13px; color: #4a5a76;
+      text-align: center; padding: 0 12px;
+    }
+    .page-status.status-sold .rent-table::after {
+      content: "Verhuur niet beschikbaar — dit pak is verkocht";
+    }
+  </style>
+</head>
+<body>
+  <div class="status-banner">
+    Dit pak is gereserveerd
+    <span class="sub">Dit wetsuit is op dit moment gereserveerd. Stuur een berichtje als je op de hoogte wilt blijven of interesse hebt in vergelijkbaar aanbod.</span>
+  </div>
+
+<header>
+  <div class="crumbs">
+    <a href="../index.html">Home</a>
+    &nbsp;›&nbsp; <a href="../index.html#heren-wetsuits">Heren wetsuits</a>
+    &nbsp;›&nbsp; De Soto T1 First Wave — Heren maat 5/6
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+
+    <div class="gallery">
+      <div class="main">
+        <button class="nav-btn prev" aria-label="Vorige foto" onclick="navFoto(-1)">‹</button>
+        <img id="mainImage" src="fotos/desoto-t1-voorkant.jpg" alt="De Soto T1 First Wave — voorkant, uit het water lopend op het strand">
+        <button class="nav-btn next" aria-label="Volgende foto" onclick="navFoto(1)">›</button>
+        <div class="counter"><span id="counterCurrent">1</span> / <span id="counterTotal">10</span></div>
+      </div>
+      <div class="gallery-thumbs" id="thumbsContainer">
+        <div data-src="fotos/desoto-t1-voorkant.jpg" data-alt="Voorkant — Pullover-top met blauwe T1-print, Bibjohn-onderstuk" class="active">
+          <img src="fotos/desoto-t1-voorkant.jpg" alt="Voorkant">
+        </div>
+        <div data-src="fotos/desoto-t1-zijkant-links.jpg" data-alt="Linkerzij — langs de waterlijn lopend, blauwe wave-strepen op de arm">
+          <img src="fotos/desoto-t1-zijkant-links.jpg" alt="Linkerzij">
+        </div>
+        <div data-src="fotos/desoto-t1-achterkant.jpg" data-alt="Achterkant — T1-print op de rug en lage halslijn">
+          <img src="fotos/desoto-t1-achterkant.jpg" alt="Achterkant">
+        </div>
+        <div data-src="fotos/desoto-t1-speedvest.jpg" data-alt="Met de mouwloze Speedvest-top — voor warm water">
+          <img src="fotos/desoto-t1-speedvest.jpg" alt="Speedvest-variant">
+        </div>
+        <div data-src="fotos/desoto-t1-uit-water.jpg" data-alt="Uit het water lopend met opspattend water">
+          <img src="fotos/desoto-t1-uit-water.jpg" alt="Uit het water">
+        </div>
+        <div data-src="fotos/desoto-t1-voorkant-lachend.jpg" data-alt="Vooraanzicht — lachend uit zee komend bij gouden uur">
+          <img src="fotos/desoto-t1-voorkant-lachend.jpg" alt="Vooraanzicht lachend">
+        </div>
+        <div data-src="fotos/desoto-t1-info-bibjohn.jpg" data-alt="Het Bibjohn-onderstuk (maat 5) — los onderdeel, 5 mm benen/heupen">
+          <img src="fotos/desoto-t1-info-bibjohn.jpg" alt="Bibjohn-onderstuk">
+        </div>
+        <div data-src="fotos/desoto-t1-info-pullover.jpg" data-alt="De Pullover-top met lange mouwen (maat 6) — voor koeler water">
+          <img src="fotos/desoto-t1-info-pullover.jpg" alt="Pullover-top">
+        </div>
+        <div data-src="fotos/desoto-t1-info-speedvest.jpg" data-alt="De mouwloze Speedvest-top (maat 6) — voor warm water">
+          <img src="fotos/desoto-t1-info-speedvest.jpg" alt="Speedvest-top">
+        </div>
+        <div data-src="fotos/desoto-t1-info-diktekaart.jpg" data-alt="Diktekaart — 5 mm benen/heupen, 2 mm middenstuk en tops">
+          <img src="fotos/desoto-t1-info-diktekaart.jpg" alt="Diktekaart van het pak">
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1>De Soto T1 First Wave — tweedelig systeem · Heren maat 5/6</h1>
+      <div class="sub">Tweedelig triathlon / open-water systeem · Bibjohn + Pullover + Speedvest · GreenGoma limestone-neopreen · gebruikt</div>
+
+      <div class="badges">
+        <span class="badge gold">Middenklasse (B)</span>
+        <span class="badge blue">Tweedelig systeem</span>
+        <span class="badge green">3 delen: 1 broek + 2 tops</span>
+      </div>
+
+      <div class="price-card">
+
+        <div class="price-koop">
+          <span class="now">€&nbsp;345</span>
+          <span class="was-label">Nieuwprijs set</span>
+          <span class="was">€&nbsp;1.180</span>
+        </div>
+        <div class="extras-line">
+          <span style="font-size: 12px; color: #6b7d97;">Nieuwprijs van de drie delen samen bij De Soto (VS): ± € 1.180 — exclusief de import- en douanekosten die destijds zijn betaald.</span>
+        </div>
+
+        <a class="cta"
+           href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20interesse%20in%20de%20De%20Soto%20T1%20First%20Wave%20(tweedelig)%20heren%20maat%205%2F6%20-%20kun%20je%20me%20meer%20vertellen%3F">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Stuur me een berichtje op WhatsApp
+        </a>
+        <div class="cta-sub">Je opent WhatsApp met een voorgevuld bericht</div>
+
+      </div>
+
+      <div style="margin-top: 28px;">
+        <h3 style="font-size: 15px; color: #4a5a76; margin-bottom: 8px;">Liever dit wetsuit huren?</h3>
+        <table class="rent-table">
+          <tbody>
+            <tr><td>1 dag</td><td class="price">€ 25</td></tr>
+            <tr><td>Weekend (vr-ma)</td><td class="price">€ 50</td></tr>
+            <tr><td>Midweek (ma-vr)</td><td class="price">€ 75</td></tr>
+            <tr><td>Hele week</td><td class="price">€ 100</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top: 10px; padding: 10px 12px; background: #f6f9fc; border-radius: 6px; font-size: 12px; color: #4a5a76; line-height: 1.5;">
+          <strong style="color: #1a2942;">Borg:</strong> € 100 bij verhuur. Bij ongeschonden inlevering volledig terug — kleine nagelscheurtjes (≤ 10 cent-stuk) zijn geen probleem, dat is gewoon gebruik. Bij grotere scheuren worden reparatiekosten volgens onze <a href="../reparatie/" style="color: #0a6cb1;">reparatie-tarieven</a> van de borg ingehouden.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <section>
+    <h2>Over dit pak</h2>
+    <p>De <strong>De Soto T1 First Wave</strong> is het beroemde <strong>tweedelige</strong> wetsuit-systeem van het Amerikaanse merk De Soto Sport — de pionier van de twee-stuks triathlonwetsuit. In plaats van één pak bestaat het uit een los <strong>onderstuk (Bibjohn)</strong> en een los <strong>bovenstuk</strong>, die elkaar in de taille overlappen. Het grote voordeel van die losse delen: het pak kan je armen <strong>nooit omlaag trekken</strong>. Bij een one-piece spant een strak zittend torso je schouders en armen naar beneden; hier bestaat die verbinding simpelweg niet, dus je houdt bij elke slag volledige bewegingsvrijheid — een lagere halslijn en echt vrije schouders.</p>
+    <p>Bij dit systeem horen <strong>drie delen</strong>: het Bibjohn-onderstuk (maat 5) plus <strong>twee bovendelen</strong> in maat 6 — de <strong>Pullover</strong> met lange mouwen voor koeler water, én de mouwloze <strong>Speedvest</strong> voor warm, wetsuit-legaal water. Je hebt dus in één set een oplossing voor zowel koud als warm water. Geïmporteerd uit de VS en de afgelopen jaren met veel plezier gebruikt.</p>
+    <p style="font-size: 13px; color: #6b7d97;">Foto's tonen de De Soto T1 First Wave-lijn (zwart met blauwe T1-print) — vergelijkbaar met dit pak.</p>
+  </section>
+
+  <section>
+    <h2>Voor wie is dit pak?</h2>
+    <div class="profiel-grid">
+      <div class="profiel-card">
+        <div class="profiel-label">Niveau</div>
+        <div class="profiel-text">Recreatieve tot wedstrijd-triatleet of open-water-zwemmer die een premium, flexibel systeem wil met maximale bewegingsvrijheid in de schouders. Een echte liefhebbers-keuze.</div>
+      </div>
+      <div class="profiel-card">
+        <div class="profiel-label">Pasvorm</div>
+        <div class="profiel-text">Onderstuk (Bibjohn) <strong>maat 5</strong>: 175–193 cm · 75–86 kg. Bovendelen (Pullover + Speedvest) <strong>maat 6</strong>: 183–198 cm · 86–100 kg. Een andere top- dan bottom-maat is normaal bij De Soto — de delen overlappen telescopisch.</div>
+      </div>
+      <div class="profiel-card">
+        <div class="profiel-label">Type zwemmer</div>
+        <div class="profiel-text">Voor wie geen rubber op de schouders wil voelen en in wisselende watertemperaturen zwemt: met de Pullover voor koeler water en de Speedvest voor warm water dek je het hele seizoen af.</div>
+      </div>
+      <div class="profiel-card">
+        <div class="profiel-label">Sterkste punt voor jou</div>
+        <div class="profiel-text">Een <strong>compleet premium systeem</strong> (nieuwwaarde ± € 1.180) met GreenGoma limestone-neopreen en twee tops, voor een fractie van de nieuwprijs. Zelden tweedehands te vinden in Europa.</div>
+      </div>
+    </div>
+    <div class="profiel-disclaimer">
+      <strong>Twijfel je over de maat?</strong> Dit is een richtlijn — geen absolute regel. Bekijk de officiële <a href="https://www.desotosport.com/pages/t1-wetsuits-size-chart" target="_blank" rel="noopener">De Soto T1 maattabel</a>, of huur het pak eerst (€&nbsp;25 / dag) om te ontdekken of het écht bij je past.
+    </div>
+  </section>
+
+  <section>
+    <h2>Speciale features van de De Soto T1 First Wave</h2>
+    <div class="tech-grid">
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/desoto-t1-voorkant.jpg" alt="De Soto T1 — tweedelig systeem"></div>
+        <div class="tech-card-body">
+          <h3>Tweedelig systeem</h3>
+          <div class="tech-sub">Vrije schouders</div>
+          <p>Los onder- en bovenstuk die telescopisch overlappen: niets dat je armen omlaag trekt of je schouders naar beneden spant. Volledige bewegingsvrijheid, een lagere halslijn en minder schoudervermoeidheid dan bij een one-piece.</p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/desoto-t1-uit-water.jpg" alt="De Soto T1 — beendrijfvermogen"></div>
+        <div class="tech-card-body">
+          <h3>5 mm been-flotatie</h3>
+          <div class="tech-sub">Meer drijfvermogen, meer snelheid</div>
+          <p>Dik 5 mm rubber van de enkels tot de heupen tilt de grootste botten en spieren omhoog voor een efficiëntere waterligging — dunner 2 mm in het middenstuk voor bewegingsvrijheid.</p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/desoto-t1-zijkant-links.jpg" alt="De Soto T1 — GreenGoma limestone-neopreen"></div>
+        <div class="tech-card-body">
+          <h3>GreenGoma limestone-rubber</h3>
+          <div class="tech-sub">Eco · Slick Composite Skin</div>
+          <p>De Soto's eigen limestone-neopreen — geen aardolie. Meer gesloten cellen (98,9% waterdicht), licht en snel droog, met een gladde Slick Composite Skin voor minder weerstand. 4-way-stretch voering en gelijmde, blind-gestikte naden.</p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <div class="tech-img"><img src="fotos/desoto-t1-speedvest.jpg" alt="De Soto T1 — twee tops"></div>
+        <div class="tech-card-body">
+          <h3>Twee tops in één set</h3>
+          <div class="tech-sub">Warm én koud water</div>
+          <p>Pullover met lange mouwen voor koeler water plus mouwloze Speedvest voor warm water. BIO-STROKE-armstand en een lichtgewicht, corrosiebestendige YKK-rits.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Conditie</h2>
+    <div class="conditie-card">
+      <ul>
+        <li><strong>Conditie-klasse: Middenklasse (B)</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wat betekent "tweedehands"?</h2>
+    <p>Alle wetsuits in de IkLeerBorstcrawl-shop zijn tweedehands. We delen ze in drie klassen in zodat je vooraf weet wat je mag verwachten:</p>
+
+    <div class="klasse-grid">
+
+      <div class="klasse-card">
+        <span class="klasse-letter">A</span>
+        <div class="klasse-name">Topstaat</div>
+        <div class="klasse-desc">Gebruikt maar vrijwel als nieuw. Hooguit 1 of 2 kleine nagelscheurtjes, geen grote reparaties. Voor wie de hoogste kwaliteit wil voor ver onder nieuwprijs.</div>
+      </div>
+
+      <div class="klasse-card active">
+        <span class="klasse-letter">B</span>
+        <div class="klasse-name">Middenklasse</div>
+        <div class="klasse-desc">Maximaal 1 of 2 kleine, professioneel uitgevoerde reparaties. Doet niets af aan de kwaliteit en gebruikswaarde — perfect te gebruiken net als een nieuw wetsuit.</div>
+      </div>
+
+      <div class="klasse-card">
+        <span class="klasse-letter">C</span>
+        <div class="klasse-name">Voordeelklasse</div>
+        <div class="klasse-desc">Duidelijk gebruikt, meerdere zichtbare reparaties. Nog steeds een volwaardig pak om mee te zwemmen of trainen — alleen voor een veel voordeligere prijs.</div>
+      </div>
+
+    </div>
+
+    <div class="extra-info">
+      <strong>Middenklasse (B):</strong> dit systeem is gebruikt maar verkeert in goede staat. Een compleet premium De Soto-set met twee tops, ruim onder de nieuwprijs — veel kwaliteit voor je geld.
+    </div>
+  </section>
+
+  <section>
+    <h2>Specs</h2>
+    <div class="specs-grid">
+      <div class="label">Merk</div>
+      <div class="value">De Soto Sport (VS)</div>
+
+      <div class="label">Model</div>
+      <div class="value">T1 First Wave — tweedelig systeem (Bibjohn + Pullover + Speedvest)</div>
+
+      <div class="label">Type</div>
+      <div class="value">Tweedelig triathlon / open-water wetsuit-systeem</div>
+
+      <div class="label">Onderstuk (Bibjohn)</div>
+      <div class="value">Heren maat 5 · 175–193 cm · 75–86 kg &nbsp;·&nbsp; <a href="https://www.desotosport.com/pages/t1-wetsuits-size-chart" target="_blank" rel="noopener" style="font-size: 13px; font-weight: 500;">bekijk maattabel De Soto</a></div>
+
+      <div class="label">Bovendelen (Pullover + Speedvest)</div>
+      <div class="value">Heren maat 6 · 183–198 cm · 86–100 kg</div>
+
+      <div class="label">Neopreen</div>
+      <div class="value">GreenGoma — limestone-neopreen van De Soto, met Slick Composite Skin</div>
+
+      <div class="label">Diktes</div>
+      <div class="value">Bibjohn 5 mm benen/heupen · 2 mm middenstuk &nbsp;·&nbsp; tops 2 mm</div>
+
+      <div class="label">Buoyancy</div>
+      <div class="value">Dik rubber in benen en heupen tilt de grootste spieren — meer drijfvermogen, meer snelheid</div>
+
+      <div class="label">Naden</div>
+      <div class="value">Gelijmd en blind-gestikt</div>
+
+      <div class="label">Rits</div>
+      <div class="value">YKK lichtgewicht, corrosiebestendig</div>
+
+      <div class="label">Tops</div>
+      <div class="value">Pullover (lange mouw, koeler water) + Speedvest (mouwloos, warm water)</div>
+
+      <div class="label">Kleur</div>
+      <div class="value">Zwart met blauwe T1-print</div>
+
+      <div class="label">Nieuwprijs set (VS)</div>
+      <div class="value">± € 1.180 (drie delen samen)</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Garantie en restitutie</h2>
+    <div class="voorwaarden">
+      <ul>
+        <li><strong>Vooraf bekijken kan altijd.</strong> Je kunt het pak komen passen of bezichtigen voordat je beslist.</li>
+        <li><strong>De foto's zijn vergelijkbaar met het werkelijke pak — niet het identieke exemplaar.</strong></li>
+        <li><strong>Eenmaal gekocht is gekocht.</strong> Geen restitutie achteraf.</li>
+        <li><strong>Twijfel je?</strong> Huur het pak dan eerst (de huurprijzen staan bovenaan op deze pagina) en beslis daarna of je het wilt kopen. Zo ben je 100% zeker.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Vragen?</h2>
+    <p>Stuur een berichtje op WhatsApp en we reageren doorgaans binnen een paar uur. Bezichtigen of passen kan in overleg.</p>
+    <a class="cta" style="max-width: 320px;"
+       href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20interesse%20in%20de%20De%20Soto%20T1%20First%20Wave%20(tweedelig)%20heren%20maat%205%2F6%20-%20kun%20je%20me%20meer%20vertellen%3F">
+      WhatsApp ons
+    </a>
+  </section>
+
+  <div class="credits">
+    <strong>Disclaimer:</strong> Promotionele foto's vergelijkbaar met het aangeboden pak. Kleurstellingen en details kunnen iets afwijken van het wetsuit dat wij te koop aanbieden op deze pagina.
+  </div>
+
+</div>
+
+<footer>
+  Onderdeel van <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>
+  · 2dehands wetsuits voor klanten
+</footer>
+
+<script>
+  (function() {
+    const thumbs = Array.from(document.querySelectorAll('#thumbsContainer > div'));
+    const mainImg = document.getElementById('mainImage');
+    const counterEl = document.getElementById('counterCurrent');
+    const totalEl = document.getElementById('counterTotal');
+    let current = 0;
+    totalEl.textContent = thumbs.length;
+
+    function show(idx) {
+      current = (idx + thumbs.length) % thumbs.length;
+      const t = thumbs[current];
+      mainImg.src = t.dataset.src;
+      mainImg.alt = t.dataset.alt || '';
+      counterEl.textContent = current + 1;
+      thumbs.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    window.navFoto = function(delta) { show(current + delta); };
+
+    thumbs.forEach((t, i) => {
+      t.addEventListener('click', function() { show(i); });
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft')  { show(current - 1); }
+      if (e.key === 'ArrowRight') { show(current + 1); }
+    });
+  })();
+</script>
+
+</body>
+</html>
