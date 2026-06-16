@@ -342,10 +342,10 @@
   <div class="sort-bar">
     <label for="sortSelect">Sorteren:</label>
     <select class="sort-select" id="sortSelect" aria-label="Sorteervolgorde">
+      <option value="binnen-laatst" selected>Laatst binnengekomen</option>
       <option value="prijs-hoog">Prijs (hoog naar laag)</option>
       <option value="prijs-laag">Prijs (laag naar hoog)</option>
       <option value="binnen-eerst">Eerst binnengekomen</option>
-      <option value="binnen-laatst">Laatst binnengekomen</option>
     </select>
   </div>
 
@@ -448,7 +448,7 @@
     </a>
 
     <!-- BTTLNS Inferno -->
-    <a href="bttlns-inferno-heren-ml/" class="card card-status status-reserved" data-status-label="GERESERVEERD" data-categorie="heren" data-prijs="129" data-volgnr="12" style="color: inherit;">
+    <a href="bttlns-inferno-heren-ml/" class="card" data-categorie="heren" data-prijs="129" data-volgnr="12" style="color: inherit;">
       <div class="photo">
         <img src="bttlns-inferno-heren-ml/fotos/bttlns-inferno-front-A.jpg" alt="BTTLNS Inferno">
       </div>
@@ -751,8 +751,8 @@
       return map[hash] || 'alle';
     }
 
-    // Default-sortering: prijs hoog naar laag
-    applySort('prijs-hoog');
+    // Default-sortering: laatst binnengekomen
+    applySort('binnen-laatst');
     applyFilter(categorieFromHash());
 
     filterBtns.forEach(b => {
