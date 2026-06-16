@@ -135,6 +135,25 @@ Bij twijfel of geen vergelijkbare aanbiedingen: stel een prijs voor en vraag Mar
 
 Standaard 4 verhuur-tarieven (1 dag / weekend / midweek / week).
 
+**Hoe je de bedragen bepaalt (verplicht) — gekoppeld aan de verkoopprijs, NIET aan de klasse.** De conditieklasse (A/B/C) zegt niets over de huurprijs — een goedkoop en een duur pak van dezelfde klasse huren níét voor hetzelfde bedrag. De waarde van het pak (= de verkoopprijs) bepaalt de huur.
+
+1. **Dagtarief naar verkoopprijs:**
+
+   | Verkoopprijs | Dagtarief |
+   |---|---|
+   | < € 80 | € 10 |
+   | € 80 – 149 | € 15 |
+   | € 150 – 249 | € 20 |
+   | € 250 + | € 25 |
+
+2. **Vaste ladder vanaf het dagtarief:** weekend = 2× · midweek = 3× · hele week = 4×.
+   - Dagtarief € 10 → € 10 / 20 / 30 / 40
+   - Dagtarief € 15 → € 15 / 30 / 45 / 60
+   - Dagtarief € 20 → € 20 / 40 / 60 / 80
+   - Dagtarief € 25 → € 25 / 50 / 75 / 100
+
+Wijzigt de verkoopprijs (bv. een pak zakt een klasse en wordt goedkoper)? Dan loopt de huur automatisch mee via de band — niet los bepalen.
+
 **Afrondingsregel — verplicht:** alle verhuurbedragen worden afgerond op **€5**. Geen € 18, € 23, € 38 of € 67 — altijd € 20, € 25, € 40, € 65 of € 70. Dit geldt voor zowel de verhuurtabel op de detail-pagina als de "vanaf €X / dag"-regel op de homepage-kaart en de "huur het pak eerst (€X / dag)"-regel in de Voor-wie-disclaimer. Reden: nette ronde bedragen ogen professioneler en zijn makkelijker te onthouden.
 
 Na de tabel **altijd** dit borg-blokje:
@@ -460,6 +479,7 @@ Vóór een pagina als klaar wordt gemarkeerd, deze 8 punten doorlopen:
 - [ ] Doorgehaalde prijs heeft een label ("Nieuwprijs" of "Huidig model") — anders niet plaatsen
 - [ ] Geen Engelse jargon ("MSRP", "RRP", "SRP", "USD") op de pagina
 - [ ] Alle verhuurbedragen afgerond op € 5 (zowel verhuurtabel, homepage-kaart `vanaf €X` als Voor-wie-disclaimer)
+- [ ] Verhuur-dagtarief past bij de verkoopprijs-band (sectie 2) en de ladder = 2× / 3× / 4× (weekend / midweek / week)
 
 ---
 
@@ -514,4 +534,5 @@ Bij naam-/modelcorrectie: slug hernoemen via `mv`, niet via duplicate. QR-codes 
 - **2026-04-30** — **Major skill-fix**: foto-regel herschreven naar "alléén de aangeleverde set in de carousel, geen werkelijke pak-foto's en officiële merk-foto's mengen". Aanleiding: Fjord 3.0 had eerder mengelmoes (5 werkelijke + 4 officiële) en Mark voegde 6 nieuwe AI-promo's toe. Cowork interpreteerde de skill-regel "Hoofdfoto = altijd eerste werkelijke pakfoto" als bevel om die mengelmoes te behouden, met als resultaat dat Fjord opviel ten opzichte van de andere 9 pagina's (op homepage werd Fjord-thumb een leeg pak op hangertje terwijl alle andere kaarten een AI-promo met persoon op strand tonen). Mark belangrijk citaat: *"Wat is hier anders aan dan alle andere wetsuits die we tot nog toe hebben gedaan? Waarom doe jij nou in één keer anders?"* Skill-regel was de bron van de fout. Tegelijk: nieuwe sectie "Geen Engelse handelstermen" toegevoegd (RRP/MSRP/SRP/Sold Out → adviesprijs/uitverkocht), en RRP-vermeldingen op DHB Hydron, HUUB Archimedes II en ROKA Gen.I weggehaald.
 - **2026-05-01** — Sectie 5 (Conditie-blok) herschreven naar default "alleen klasse-aanduiding, niets meer". Tweede `<li>` mag uitsluitend op expliciete instructie van Mark — niet uit ChatGPT-research, oude Vinted-advertentie of eigen interpretatie. Anti-patroon 2 herschreven: specifieke schade-beschrijving (bv. "3 scheurtjes, 2 op borst, 1 op schouder") is **verboden** tenzij Mark er woord-voor-woord om vraagt. Aanleiding: Orca Alpha Heren M kreeg een conditie-li met scheurtjes-detail uit een chat van enkele dagen oud, terwijl Mark expliciet had aangegeven dat de schade inmiddels groter was (vandaar klasse C) maar dat hij die zelf niet wilde uitspecificeren. Citaat: *"Ik heb inmiddels al veel meer scheurtjes erbij; vandaar ook voor de klasse C. Maar jij mag niet zomaar overnemen en beschrijven wat er precies wel of niet is."* ChatGPT-chats zijn momentopnames; alleen Mark's actuele oordeel telt voor schade-info.
 - **2026-05-01** — Verhuurprijs-afrondingsregel toegevoegd aan sectie 2 en verifieer-checklist: alle verhuurbedragen worden afgerond op €5 (geen €18, €23, €38 — altijd €20, €25, €40 etc.). Geldt voor verhuurtabel, homepage-kaart "vanaf €X" en Voor-wie-disclaimer. Aanleiding: Orca Alpha kreeg verhuurprijzen €18 / €38 / €55 / €70 die Mark allemaal omhoog wilde naar het volgende veelvoud van 5. Tegelijk Zone3 Vision verhuur-tabel en homepage-kaart gefixt (€18 → €20 op alle 3 plekken).
+- **2026-06-16** — **Verhuurprijs-bepaling gecodificeerd** (sectie 2 + checklist). Tot nu toe zei de skill alleen "4 tarieven, afronden op € 5" maar niet hóé je het bedrag bepaalt — in de praktijk volgde de huur losjes de verkoopprijs, inconsistent, en de interne ladder (weekend/midweek/week) verschilde per pagina (2,5×–4,6×). Nu vastgelegd: dagtarief via verkoopprijs-banden (<€80 → €10, €80–149 → €15, €150–249 → €20, €250+ → €25), vaste ladder 2× / 3× / 4×. Expliciet: huur is gekoppeld aan verkoopprijs, NIET aan klasse (bewijs: klasse A loopt van dhb Hydron €79=€10/dag tot deboer Fjord €549=€25/dag). Aanleiding: Mark vroeg of de verhuurprijzen per klasse waren vastgelegd of aan de verkoopprijs gekoppeld — bleek nergens geregeld. NB: enkele bestaande pagina's (o.a. Orca Alpha, BlueSeventy Helix, ROKA Gen.I/II) wijken nog af van de nieuwe banden en moeten nog worden bijgesteld.
 - **2026-05-01** — Twee nieuwe regels toegevoegd: (1) **Verkoopprijs bepalen** (sectie 2) — als Mark geen verkoopprijs opgeeft, kijk op Marktplaats/Vinted naar zelfde merk + model + jaar + conditie en pak de onderkant van die markt. Snelle doorloop > maximaal rendement. (2) **Meerdere identieke pakken** (sectie 14) — slug krijgt suffix `-2`, `-3` etc., of een omschrijvende suffix (`-zwart`). Op de homepage-kaart moeten dubbele pakken visueel onderscheidbaar zijn via h2/meta/badges. Aanleiding: Mark kondigde aan dat hij regelmatig meerdere exemplaren van hetzelfde merk/model/maat heeft, en wil dat het systeem schaalbaar werkt voor 5+ identieke pakken zonder slug-conflicten.

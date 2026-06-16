@@ -13,7 +13,7 @@
 
 [[redirects]]
   from = "/roka"
-  to = "/roka-maverick-mx-gen1-dames-m/"
+  to = "/"
   status = 301
 
 [[redirects]]
@@ -31,6 +31,12 @@
   from = "/blueseventy-helix-dames-xs/*"
   to = "/"
   status = 301
+
+[[redirects]]
+  from = "/roka-maverick-mx-gen1-dames-m/*"
+  to = "/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
