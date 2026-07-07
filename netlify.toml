@@ -47,6 +47,11 @@
   from = "/huub-alta-heren-xl/*"
   to = "/"
   status = 301
+
+[[redirects]]
+  from = "/zone3-vanquish-dames-st/*"
+  to = "/"
+  status = 301
 [[headers]]
   for = "/*"
   [headers.values]
