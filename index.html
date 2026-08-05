@@ -189,6 +189,7 @@
     }
     .card .badge.gold { background: #fff2c2; color: #7a5a00; border: 1px solid #f0d573; }
     .card .badge.green { background: #e6f3ec; color: #1f7a3f; }
+    .card .badge.new { background: #0a6cb1; color: #fff; }
 
     .card .price-row {
       display: flex;
@@ -356,7 +357,7 @@
   <div class="grid" id="cardGrid">
 
     <!-- 2XU P:1 Propel (dames) -->
-    <a href="2xu-propel-p1-dames-s/" class="card" data-categorie="dames" data-prijs="195" data-volgnr="19" style="color: inherit;">
+    <a href="2xu-propel-p1-dames-s/" class="card" data-categorie="dames" data-prijs="195" data-volgnr="19" data-binnen="2026-08-05" style="color: inherit;">
       <div class="photo">
         <img src="2xu-propel-p1-dames-s/fotos/2xu-p1-voorkant.jpg" alt="2XU P:1 Propel dames">
       </div>
@@ -753,6 +754,22 @@
       const map = { 'heren-wetsuits': 'heren', 'dames-wetsuits': 'dames', 'kinder-wetsuits': 'kinder' };
       return map[hash] || 'alle';
     }
+
+    // "Nieuw binnengekomen"-badge: verschijnt tot 21 dagen na data-binnen en verdwijnt daarna
+    // vanzelf. Neemt zolang hij actief is de plek in van de positieve badge (klasse + 1 blijft).
+    cards.forEach(c => {
+      const d = c.dataset.binnen;
+      if (!d) return;
+      const dagen = (Date.now() - new Date(d + 'T00:00:00').getTime()) / 86400000;
+      if (isNaN(dagen) || dagen < 0 || dagen > 21) return;
+      const badges = c.querySelector('.badges');
+      if (!badges) return;
+      badges.querySelectorAll('.badge:not(.gold)').forEach(b => b.remove());
+      const nb = document.createElement('span');
+      nb.className = 'badge new';
+      nb.textContent = 'Nieuw binnengekomen';
+      badges.appendChild(nb);
+    });
 
     // Default-sortering: laatst binnengekomen
     applySort('binnen-laatst');

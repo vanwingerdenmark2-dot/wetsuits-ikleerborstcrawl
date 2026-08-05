@@ -119,6 +119,7 @@
     .badge.blue { background: #e6f0fb; color: #0a4d8f; }
     .badge.amber { background: #fdf3e0; color: #8a5a05; }
     .badge.gold { background: #fff2c2; color: #7a5a00; border: 1px solid #f0d573; }
+    .badge.new { background: #0a6cb1; color: #fff; }
 
     .price-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 22px; margin-top: 8px; }
     .price-koop { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 8px; }
@@ -321,7 +322,8 @@
 
       <div class="badges">
         <span class="badge gold">Topstaat (A)</span>
-        <span class="badge green">Vrijwel nieuw</span>
+        <span class="badge new" id="nieuwBadge" data-binnen="2026-08-05">Nieuw binnengekomen</span>
+        <span class="badge green" id="vrijwelNieuwBadge">Vrijwel nieuw</span>
       </div>
 
       <div class="price-card">
@@ -577,6 +579,22 @@
       if (e.key === 'ArrowLeft')  { show(current - 1); }
       if (e.key === 'ArrowRight') { show(current + 1); }
     });
+  })();
+</script>
+
+<script>
+  // "Nieuw binnengekomen"-badge: automatisch weg na 3 weken (21 dagen).
+  (function() {
+    const nb = document.getElementById('nieuwBadge');
+    if (!nb) return;
+    const binnen = new Date(nb.dataset.binnen + 'T00:00:00');
+    const dagen = (Date.now() - binnen.getTime()) / 86400000;
+    if (isNaN(dagen) || dagen < 0 || dagen > 21) {
+      nb.remove();                                   // verlopen → terug naar "Vrijwel nieuw"
+    } else {
+      const vn = document.getElementById('vrijwelNieuwBadge');
+      if (vn) vn.style.display = 'none';             // nog nieuw → "Vrijwel nieuw" even verbergen
+    }
   })();
 </script>
 
