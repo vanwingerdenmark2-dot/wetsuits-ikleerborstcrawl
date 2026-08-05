@@ -59,6 +59,22 @@ Elke detail-pagina volgt **exact** deze sectie-volgorde, ongeacht het pak:
   - "Geen reparaties" / "Geen beschadigingen" — zegt iets te veel
   - Verwijzingen naar specifieke schade
 
+### "Nieuw binnengekomen"-badge (datum-gestuurd — 3 weken zichtbaar, dan vanzelf weg)
+
+Elk **nieuw** pak krijgt automatisch de badge **"Nieuw binnengekomen"** gedurende **21 dagen** na binnenkomst. Puur client-side op datum: géén GitHub Action, géén dagelijkse commits — de badge rendert simpelweg niet meer zodra de datum ouder is dan 21 dagen. Kleur: gevulde merkblauw `.badge.new { background: #0a6cb1; color: #fff; }` (op het overzicht `.card .badge.new`).
+
+**Bij elk nieuw pak (verplicht):**
+
+1. **Overzichtskaart** (`index.html`): zet op de `<a class="card" …>` een `data-binnen="JJJJ-MM-DD"` (datum van binnenkomst — zelfde datum als de `data-volgnr`-volgorde). Het injectie-scriptje in de root-`index.html` voegt de badge toe voor kaarten ≤ 21 dagen en verwijdert zolang de andere positieve badge, zodat het **klasse + 1 badge** blijft.
+2. **Detailpagina** (hero-badges), ná de klasse-badge:
+   ```html
+   <span class="badge new" id="nieuwBadge" data-binnen="JJJJ-MM-DD">Nieuw binnengekomen</span>
+   <span class="badge green" id="vrijwelNieuwBadge">Vrijwel nieuw</span>
+   ```
+   De tweede positieve badge (welke ook) krijgt `id="vrijwelNieuwBadge"`. Plus het datum-scriptje onderaan de body dat `#nieuwBadge` verwijdert bij > 21 dagen en anders de tweede positieve badge verbergt.
+
+Werkend referentie-patroon (kopiëren): `2xu-propel-p1-dames-s/index.html` + de root-`index.html`.
+
 ### Prijs
 
 - **Verkoopprijs** prominent (`class="now"`) in zwart/donker
@@ -551,3 +567,4 @@ Bij naam-/modelcorrectie: slug hernoemen via `mv`, niet via duplicate. QR-codes 
 - **2026-06-16** — **Specs + maattabel zelf opzoeken verplicht** (sectie 6 + sectie 2 maattabel). De bouwer zoekt per pak zelf de officiële specs én de exacte maattabel-cijfers op (merksite eerst, dan betrouwbare retailers); Mark levert dat niet aan. Alleen verifieerbare feiten, niets verzinnen. Aanleiding: Mark — "jij moet zelf alle specificaties en de exacte, juiste maattabel van deze wetsuit erbij zoeken. Geldt altijd voor alle wetsuits." Bij de HUUB Alta XL opgezocht: officiële HUUB-maat XL = 183–208 cm / 90–103 kg, geverifieerde features (Arms Neutral™, 2:4 buoyancy-profiel, flat-lying naden, rear-release rugrits).
 - **2026-06-16** — **Verhuurprijs-bepaling gecodificeerd** (sectie 2 + checklist). Tot nu toe zei de skill alleen "4 tarieven, afronden op € 5" maar niet hóé je het bedrag bepaalt — in de praktijk volgde de huur losjes de verkoopprijs, inconsistent, en de interne ladder (weekend/midweek/week) verschilde per pagina (2,5×–4,6×). Nu vastgelegd: dagtarief via verkoopprijs-banden (<€80 → €10, €80–149 → €15, €150–249 → €20, €250+ → €25), vaste ladder 2× / 3× / 4×. Expliciet: huur is gekoppeld aan verkoopprijs, NIET aan klasse (bewijs: klasse A loopt van dhb Hydron €79=€10/dag tot deboer Fjord €549=€25/dag). Aanleiding: Mark vroeg of de verhuurprijzen per klasse waren vastgelegd of aan de verkoopprijs gekoppeld — bleek nergens geregeld. NB: enkele bestaande pagina's (o.a. Orca Alpha, BlueSeventy Helix, ROKA Gen.I/II) wijken nog af van de nieuwe banden en moeten nog worden bijgesteld.
 - **2026-05-01** — Twee nieuwe regels toegevoegd: (1) **Verkoopprijs bepalen** (sectie 2) — als Mark geen verkoopprijs opgeeft, kijk op Marktplaats/Vinted naar zelfde merk + model + jaar + conditie en pak de onderkant van die markt. Snelle doorloop > maximaal rendement. (2) **Meerdere identieke pakken** (sectie 14) — slug krijgt suffix `-2`, `-3` etc., of een omschrijvende suffix (`-zwart`). Op de homepage-kaart moeten dubbele pakken visueel onderscheidbaar zijn via h2/meta/badges. Aanleiding: Mark kondigde aan dat hij regelmatig meerdere exemplaren van hetzelfde merk/model/maat heeft, en wil dat het systeem schaalbaar werkt voor 5+ identieke pakken zonder slug-conflicten.
+- **2026-08-05** — **"Nieuw binnengekomen"-badge** toegevoegd (sectie 2): elk nieuw pak krijgt via `data-binnen="JJJJ-MM-DD"` automatisch 3 weken lang deze badge op kaart én detailpagina; daarna verdwijnt hij client-side vanzelf (geen Action/commits). Neemt zolang actief de plek in van de positieve badge, zodat de kaart "klasse + 1 badge" houdt. Eerste implementatie: 2XU P:1 Propel dames S. Aanleiding: Mark wilde een nieuw-indicator die na 3 weken automatisch verdwijnt (parallel aan de 21-dagen archiveer-Action).

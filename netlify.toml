@@ -12,6 +12,11 @@
   status = 301
 
 [[redirects]]
+  from = "/2xu"
+  to = "/2xu-propel-p1-dames-s/"
+  status = 301
+
+[[redirects]]
   from = "/roka"
   to = "/"
   status = 301
