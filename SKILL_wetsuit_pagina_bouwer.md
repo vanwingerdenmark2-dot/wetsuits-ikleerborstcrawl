@@ -147,6 +147,8 @@ Daarna prijs je het pak in op **de onderkant van die markt** — vergelijkbaar m
 
 Bij twijfel of geen vergelijkbare aanbiedingen: stel een prijs voor en vraag Mark om bevestiging in plaats van te gokken op een te hoog bedrag.
 
+**Zet de prijs óók in verhouding tot de wetsuits die al op de site staan (verplicht).** Vergelijk vóór je een prijs voorstelt met de huidige catalogus (merk-tier, klasse, model-niveau): een topmodel/race-pak hoort niet lager te staan dan een instapmodel, en een nieuwer model niet lager dan een ouder model uit dezelfde lijn. Een té lage prijs t.o.v. de bestaande voorraad oogt vreemd en ondermijnt de waarde. Lager prijzen dan de markt-onderkant mag wél als je het expliciet adviseert mét reden; een ongemotiveerd te lage prijs niet. (Regel toegevoegd 2026-08-07 op Marks feedback: de BlueSeventy Helix — een flagship, nieuwer dan het eerder verkochte model — stond voorgesteld op € 169 terwijl de instap-2XU P:1 Propel op € 195 staat; opgetrokken naar € 265, proportioneel in de premium-band.)
+
 ### Verhuurtabel + borg
 
 Standaard 4 verhuur-tarieven (1 dag / weekend / midweek / week).
