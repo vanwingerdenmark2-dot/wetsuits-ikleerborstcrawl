@@ -316,6 +316,72 @@
       font-size: 13px;
       text-align: center;
     }
+
+    /* === Herinrichting: sub-navigatie, hero, hoe-werkt-het, contact === */
+    html { scroll-behavior: smooth; }
+
+    .subnav {
+      position: sticky; top: 0; z-index: 50;
+      background: #1a2942;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .subnav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 4px;
+      padding: 8px 16px;
+    }
+    .subnav a {
+      color: #c8d2e6; font-size: 14px; font-weight: 600;
+      padding: 8px 14px; border-radius: 8px; text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .subnav a:hover { background: rgba(255,255,255,0.10); color: #fff; text-decoration: none; }
+    .subnav-wa { margin-left: auto; background: #25D366; color: #fff !important; }
+    .subnav-wa:hover { background: #1ea854 !important; }
+    @media (max-width: 620px) { .subnav-wa { margin-left: 0; } }
+
+    section[id] { scroll-margin-top: 66px; }
+
+    .hero-welkom { margin-bottom: 36px; }
+    .hero-welkom h2 { font-size: 22px; margin-bottom: 10px; }
+    .hero-welkom p { color: #4a5a76; margin-bottom: 14px; max-width: 780px; }
+    .hero-wa, .cta-wa {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: #fff; font-weight: 600; font-size: 15px;
+      padding: 12px 22px; border-radius: 8px; text-decoration: none;
+    }
+    .hero-wa:hover, .cta-wa:hover { background: #1ea854; text-decoration: none; }
+
+    .hiw { margin-bottom: 40px; }
+    .hiw > h2 { font-size: 22px; margin-bottom: 6px; }
+    .hiw .lead { color: #6b7d97; margin-bottom: 18px; }
+
+    .hiw-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 26px; }
+    @media (max-width: 800px) { .hiw-tiles { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 460px) { .hiw-tiles { grid-template-columns: 1fr; } }
+    .hiw-tile { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 18px; }
+    .hiw-tile .tile-ico { font-size: 22px; margin-bottom: 8px; }
+    .hiw-tile h3 { font-size: 15px; margin-bottom: 6px; }
+    .hiw-tile p { font-size: 13px; color: #4a5a76; line-height: 1.5; margin: 0; }
+
+    .info-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    @media (max-width: 700px) { .info-cards { grid-template-columns: 1fr; } }
+    .info-card { background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 18px 20px; }
+    .info-card h3 { font-size: 15px; margin-bottom: 6px; }
+    .info-card p { font-size: 14px; color: #4a5a76; line-height: 1.55; margin: 0; }
+
+    .highlight-block { background: #f0f6fc; border-left: 3px solid #0a6cb1; border-radius: 8px; padding: 18px 20px; margin-top: 16px; }
+    .highlight-block h3 { font-size: 15px; margin-bottom: 8px; color: #1a2942; }
+    .highlight-block p { font-size: 14px; color: #4a5a76; line-height: 1.55; margin: 0; }
+    .highlight-block p + p { margin-top: 8px; }
+
+    .aanbod-head { margin-bottom: 14px; }
+    .aanbod-head h2 { font-size: 22px; margin-bottom: 4px; }
+    .aanbod-head p { color: #6b7d97; font-size: 14px; }
+
+    .contact-block { margin-top: 48px; background: #fff; border: 1px solid #e6eaf0; border-radius: 12px; padding: 28px; text-align: center; }
+    .contact-block h2 { font-size: 20px; margin-bottom: 10px; }
+    .contact-block p { color: #4a5a76; margin: 0 auto 16px; max-width: 620px; }
   </style>
 </head>
 <body>
@@ -325,13 +391,91 @@
   <p>IkLeerBorstcrawl.nl · kopen of huren · persoonlijk contact via WhatsApp</p>
 </header>
 
+<nav class="subnav" aria-label="Wetsuits-secties">
+  <div class="subnav-inner">
+    <a href="#aanbod">Aanbod</a>
+    <a href="#hoe-werkt-het">Hoe werkt het?</a>
+    <a href="reparatie/">Reparatie</a>
+    <a href="#contact">Contact</a>
+    <a href="voorwaarden/">Retour &amp; voorwaarden</a>
+    <a class="subnav-wa" href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20een%20vraag%20over%20een%20wetsuit">WhatsApp</a>
+  </div>
+</nav>
+
 <div class="wrap">
 
-  <div class="intro">
+  <section class="hero-welkom">
     <h2>Welkom</h2>
-    <p>Op deze pagina vind je de tweedehands triathlon-wetsuits die we te koop of te huur aanbieden. Allemaal vooraf gecheckt, ingedeeld in conditieklassen (Topstaat / Middenklasse / Voordeelklasse), en met een eerlijke prijsstelling — meestal onder vergelijkbare aanbiedingen op Marktplaats.</p>
-    <p>Klik op een wetsuit voor specs, foto's en huur- en koopprijzen. Vragen? Stuur een berichtje via WhatsApp — direct contact, snel antwoord.</p>
-  </div>
+    <p>Hier vind je onze tweedehands triathlon- en open-water-wetsuits, te <strong>koop</strong> én te <strong>huur</strong>. Elk pak is vooraf gecheckt, eerlijk ingedeeld in een conditieklasse (Topstaat / Middenklasse / Voordeelklasse) en scherp geprijsd, meestal onder vergelijkbare aanbiedingen op Marktplaats. Persoonlijk contact via WhatsApp, geen anonieme webshop.</p>
+    <a class="hero-wa" href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20een%20vraag%20over%20een%20wetsuit">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Stuur ons een berichtje
+    </a>
+  </section>
+
+  <section id="hoe-werkt-het" class="hiw">
+    <h2>Hoe werkt het?</h2>
+    <p class="lead">Kopen of huren, ophalen of verzenden — zo werkt het bij ons.</p>
+
+    <div class="hiw-tiles">
+      <div class="hiw-tile">
+        <div class="tile-ico">🛒</div>
+        <h3>Kopen</h3>
+        <p>Zie je een pak dat je bevalt? App ons via WhatsApp. Bezichtigen of passen kan altijd.</p>
+      </div>
+      <div class="hiw-tile">
+        <div class="tile-ico">📅</div>
+        <h3>Huren</h3>
+        <p>Elk pak is ook te huur (dag, weekend, midweek of week). Ideaal om te testen voor je koopt.</p>
+      </div>
+      <div class="hiw-tile">
+        <div class="tile-ico">🏷️</div>
+        <h3>Conditie A/B/C</h3>
+        <p>Elk pak is vooraf gecheckt en eerlijk ingedeeld: Topstaat, Middenklasse of Voordeelklasse.</p>
+      </div>
+      <div class="hiw-tile">
+        <div class="tile-ico">🛠️</div>
+        <h3>Reparatie</h3>
+        <p>Wetsuit kapot? Wij repareren 'm, ook je eigen pak. <a href="reparatie/">Bekijk de reparatieservice</a>.</p>
+      </div>
+    </div>
+
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>Bezichtigen &amp; passen</h3>
+        <p>Een wetsuit luistert nauw qua pasvorm, dus komen passen mag altijd — we raden het zelfs aan. Je plant een moment via WhatsApp. Passen is vrijblijvend; pas als het goed zit en goed voelt, beslis je.</p>
+      </div>
+      <div class="info-card">
+        <h3>Afhalen of verzenden</h3>
+        <p>Afhalen kan in overleg in de regio Roermond. Liever bezorgd? Een wetsuit is licht en compact, dus verzenden binnen Nederland en België kan in overleg. De verzendkosten zijn voor de koper; vervoerder en tarief stemmen we samen af.</p>
+      </div>
+      <div class="info-card">
+        <h3>Veilig betalen</h3>
+        <p>Bij afhalen betaal je contant of je pint ter plekke (ook contactloos). Bij verzenden betaal je vooraf via een veilige iDEAL-betaallink. Je betaalt dus pas nadat je het pak hebt gezien en gepast, of veilig vooraf bij verzending — nooit een vaag vooruitbetaalverzoek.</p>
+      </div>
+      <div class="info-card">
+        <h3>Bedenktijd &amp; retour</h3>
+        <p>Bestel je op afstand met verzending? Dan heb je 14 dagen wettelijke bedenktijd vanaf ontvangst: niet tevreden, dan stuur je het pak ongebruikt terug (retourkosten voor de koper) en krijg je je geld terug. Koop je ter plekke na passen? Dan geldt geen bedenktijd — je hebt het pak dan immers al kunnen beoordelen.</p>
+        <p style="margin-top:8px;font-size:14px;"><a href="voorwaarden/">Lees de volledige voorwaarden &amp; het modelformulier →</a></p>
+      </div>
+    </div>
+
+    <div class="highlight-block">
+      <h3>Waarom een tweedehands pak soms een kleine reparatie heeft — en die gratis is bij aankoop</h3>
+      <p>Onze wetsuits worden niet alleen verkocht, maar ook verhuurd. Bij het huren kan een pak weleens een klein beschadiginkje oplopen, zoals een nagelscheurtje. Zolang het niets ernstigs is, herstellen we dat niet altijd meteen: het pak gaat gewoon weer de verhuur in. Daardoor staat een pak soms in klasse B of C.</p>
+      <p><strong>Koop je zo'n pak? Dan bieden we je altijd aan om die kleine beschadigingen gratis en professioneel te herstellen</strong> — met dezelfde materialen en werkwijze als onze reparatieservice, zodat je pak er weer als nieuw bij ligt. Vind je dat niet nodig ("die kleine scheurtjes maak ik zelf wel"), dan laten we het zoals het is en betaal je niets extra. Het aanbod staat er hoe dan ook altijd.</p>
+    </div>
+
+    <div class="highlight-block">
+      <h3>Garantie op tweedehands</h3>
+      <p>Je koopt een gebruikt pak, dus lichte gebruikssporen horen erbij. Bij elk pak vind je een eerlijke conditie-indeling en melden we bekende beschadigingen vooraf. Je hebt altijd je wettelijke garantie: het pak moet zijn wat je op grond van leeftijd, prijs en beschreven staat mag verwachten. Iets mis dat we niet gemeld hebben en dat je niet kon verwachten? Neem contact op, dan lossen we het samen op.</p>
+    </div>
+  </section>
+
+  <section id="aanbod" class="aanbod-head">
+    <h2>Ons aanbod</h2>
+    <p>Klik op een wetsuit voor foto's, specs en de koop- en huurprijzen.</p>
+  </section>
 
   <div class="filter-bar" role="tablist" aria-label="Filter op categorie">
     <button class="filter-btn active" data-filter="alle" type="button">Alle wetsuits</button>
@@ -355,6 +499,98 @@
   </div>
 
   <div class="grid" id="cardGrid">
+
+    <!-- Aqua Sphere Rage (kinder) -->
+    <a href="aquasphere-rage-junior-12/" class="card" data-categorie="kinder" data-prijs="69" data-volgnr="27" data-binnen="2026-08-09" style="color: inherit;">
+      <div class="photo">
+        <img src="aquasphere-rage-junior-12/fotos/aquasphere-rage-voorkant.jpg" alt="Aqua Sphere Rage junior">
+      </div>
+      <div class="body">
+        <div class="brand">Aqua Sphere</div>
+        <h2>Rage — junior</h2>
+        <div class="meta">Kinder · Maat 12 (± 12 jr) · Yamamoto neopreen</div>
+        <div class="badges">
+          <span class="badge gold">Topstaat (A)</span>
+          <span class="badge green">Vrijwel nieuw</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 69</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 150</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 10 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- HUUB Aegis X (heren) -->
+    <a href="huub-aegis-x-heren-ml/" class="card" data-categorie="heren" data-prijs="259" data-volgnr="26" data-binnen="2026-08-09" style="color: inherit;">
+      <div class="photo">
+        <img src="huub-aegis-x-heren-ml/fotos/huub-aegis-x-voorkant.jpg" alt="HUUB Aegis X heren">
+      </div>
+      <div class="body">
+        <div class="brand">HUUB</div>
+        <h2>Aegis X</h2>
+        <div class="meta">Heren · Maat ML · 3:5 drijfvermogen</div>
+        <div class="badges">
+          <span class="badge gold">Topstaat (A)</span>
+          <span class="badge green">Vrijwel nieuw</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 259</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 399</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 25 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- Aqua Sphere Pursuit (heren) -->
+    <a href="aquasphere-pursuit-heren-ml/" class="card" data-categorie="heren" data-prijs="99" data-volgnr="25" data-binnen="2026-08-09" style="color: inherit;">
+      <div class="photo">
+        <img src="aquasphere-pursuit-heren-ml/fotos/aquasphere-pursuit-voorkant.jpg" alt="Aqua Sphere Pursuit heren">
+      </div>
+      <div class="body">
+        <div class="brand">Aqua Sphere</div>
+        <h2>Pursuit</h2>
+        <div class="meta">Heren · Maat ML · Yamamoto neopreen</div>
+        <div class="badges">
+          <span class="badge gold">Topstaat (A)</span>
+          <span class="badge green">Vrijwel nieuw</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 99</span>
+          <span class="was-label">Nieuwprijs destijds</span>
+          <span class="was">€ 199</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 15 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
+
+    <!-- ROKA Maverick Elite (heren) -->
+    <a href="roka-maverick-elite-heren-ml/" class="card" data-categorie="heren" data-prijs="245" data-volgnr="24" data-binnen="2026-08-09" style="color: inherit;">
+      <div class="photo">
+        <img src="roka-maverick-elite-heren-ml/fotos/roka-maverick-elite-voorkant.jpg" alt="ROKA Maverick Elite heren">
+      </div>
+      <div class="body">
+        <div class="brand">ROKA</div>
+        <h2>Maverick Elite</h2>
+        <div class="meta">Heren · Maat ML · Yamamoto neopreen</div>
+        <div class="badges">
+          <span class="badge gold">Topstaat (A)</span>
+          <span class="badge green">Vrijwel nieuw</span>
+        </div>
+        <div class="price-row">
+          <span class="price">€ 245</span>
+          <span class="was-label">Nieuwprijs</span>
+          <span class="was">€ 550</span>
+        </div>
+        <div class="rent-line">of huren vanaf € 20 / dag</div>
+        <span class="cta">Bekijk dit pak</span>
+      </div>
+    </a>
 
     <!-- BlueSeventy Helix (dames) -->
     <a href="blueseventy-helix-dames-wms/" class="card card-status status-reserved" data-categorie="dames" data-prijs="265" data-volgnr="23" data-binnen="2026-08-07" style="color: inherit;">
@@ -776,22 +1012,21 @@
 
   </div>
 
-  <div class="info-block">
-    <h2>Hoe werkt het?</h2>
-    <ul>
-      <li><strong>Kopen:</strong> klik op een wetsuit, lees de specs en vraag via WhatsApp om een afspraak om te bezichtigen of te passen. Eenmaal akkoord: persoonlijk afhalen of in overleg verzenden.</li>
-      <li><strong>Huren:</strong> alle pakken zijn ook te huur (per dag, weekend, midweek of week). Handig om eerst te testen voordat je beslist te kopen.</li>
-      <li><strong>Conditie:</strong> elk pak is ingedeeld in klasse A (Topstaat), B (Middenklasse) of C (Voordeelklasse). Klasse-uitleg staat op elke detail-pagina.</li>
-      <li><strong>Geen garantie / geen restitutie</strong> bij 2dehands-aankopen. Wel: vooraf bekijken kan altijd, en bij twijfel huur je het pak eerst.</li>
-      <li><strong>Reparatie:</strong> wetsuit kapot of beschadigd? Ook voor jouw eigen pak — bekijk onze <a href="reparatie/">reparatieservice &amp; tarieven</a>.</li>
-    </ul>
-  </div>
+  <section id="contact" class="contact-block">
+    <h2>Vragen? Neem contact op</h2>
+    <p>Een vraag over een pak, de maat, of een afspraak om te passen? Stuur een berichtje op WhatsApp — persoonlijk contact, meestal binnen een paar uur antwoord. Bezichtigen of passen kan in overleg in de regio Roermond.</p>
+    <a class="cta-wa" href="https://wa.me/31641891443?text=Hoi%2C%20ik%20heb%20een%20vraag%20over%20een%20wetsuit">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      WhatsApp ons
+    </a>
+  </section>
 
 </div>
 
 <footer>
   Onderdeel van <a href="https://ikleerborstcrawl.nl">IkLeerBorstcrawl.nl</a>
   · 2dehands wetsuits voor klanten
+  · <a href="voorwaarden/">Retour, bedenktijd &amp; garantie</a>
 </footer>
 
 <script>
@@ -866,6 +1101,11 @@
     // Default-sortering: laatst binnengekomen
     applySort('binnen-laatst');
     applyFilter(categorieFromHash());
+    // Kwam de bezoeker via een categorie-link (bijv. vanaf een detailpagina)? Scroll naar het aanbod.
+    if (window.location.hash && /wetsuits$/.test(window.location.hash)) {
+      const aanbod = document.getElementById('aanbod');
+      if (aanbod) requestAnimationFrame(() => aanbod.scrollIntoView());
+    }
 
     filterBtns.forEach(b => {
       b.addEventListener('click', () => {
