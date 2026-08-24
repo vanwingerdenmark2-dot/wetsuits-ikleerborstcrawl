@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Archiveert verkochte wetsuits ouder dan 3 weken uit de overzichtspagina."""
+"""Archiveert verkochte wetsuits ouder dan 6 weken uit de overzichtspagina."""
 
 import re
 import shutil
@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).parent.parent
 INDEX_HTML = REPO_ROOT / "index.html"
 NETLIFY_TOML = REPO_ROOT / "netlify.toml"
 ARCHIEF_DIR = REPO_ROOT / "_archief"
-DREMPEL_DAGEN = 21
+DREMPEL_DAGEN = 42
 
 
 def te_archiveren_wetsuits(html: str, vandaag) -> list:

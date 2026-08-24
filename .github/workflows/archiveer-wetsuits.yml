@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Archiveer verkochte wetsuits ouder dan 3 weken
+      - name: Archiveer verkochte wetsuits ouder dan 6 weken
         run: python scripts/archiveer-verkochte-wetsuits.py
 
       - name: Commit en push als er wijzigingen zijn
@@ -25,5 +25,5 @@ jobs:
           git config user.name "Bas Vermeer"
           git config user.email "vanwingerdenmark2@gmail.com"
           git add -A
-          git diff --staged --quiet || git commit -m "Auto: verkochte wetsuits gearchiveerd (>3 weken)"
+          git diff --staged --quiet || git commit -m "Auto: verkochte wetsuits gearchiveerd (>6 weken)"
           git push

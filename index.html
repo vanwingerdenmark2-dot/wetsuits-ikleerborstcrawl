@@ -547,7 +547,7 @@
     </a>
 
     <!-- Aqua Sphere Pursuit (heren) -->
-    <a href="aquasphere-pursuit-heren-ml/" class="card card-status status-reserved" data-categorie="heren" data-prijs="99" data-volgnr="25" data-binnen="2026-08-09" style="color: inherit;">
+    <a href="aquasphere-pursuit-heren-ml/" class="card card-status status-sold" data-status-label="VERKOCHT" data-verkocht-datum="2026-08-24" data-categorie="heren" data-prijs="99" data-volgnr="25" data-binnen="2026-08-09" style="color: inherit;">
       <div class="photo">
         <img src="aquasphere-pursuit-heren-ml/fotos/aquasphere-pursuit-voorkant.jpg" alt="Aqua Sphere Pursuit heren">
       </div>
@@ -593,7 +593,7 @@
     </a>
 
     <!-- BlueSeventy Helix (dames) -->
-    <a href="blueseventy-helix-dames-wms/" class="card card-status status-reserved" data-categorie="dames" data-prijs="265" data-volgnr="23" data-binnen="2026-08-07" style="color: inherit;">
+    <a href="blueseventy-helix-dames-wms/" class="card" data-categorie="dames" data-prijs="265" data-volgnr="23" data-binnen="2026-08-07" style="color: inherit;">
       <div class="photo">
         <img src="blueseventy-helix-dames-wms/fotos/helix-voorkant.jpg" alt="BlueSeventy Helix dames">
       </div>
@@ -639,7 +639,7 @@
     </a>
 
     <!-- Zone3 Aspire (heren) -->
-    <a href="zone3-aspire-heren-ml/" class="card card-status status-reserved" data-categorie="heren" data-prijs="185" data-volgnr="21" data-binnen="2026-08-07" style="color: inherit;">
+    <a href="zone3-aspire-heren-ml/" class="card" data-categorie="heren" data-prijs="185" data-volgnr="21" data-binnen="2026-08-07" style="color: inherit;">
       <div class="photo">
         <img src="zone3-aspire-heren-ml/fotos/zone3-aspire-voorkant.jpg" alt="Zone3 Aspire heren">
       </div>
@@ -1082,13 +1082,13 @@
       return map[hash] || 'alle';
     }
 
-    // "Nieuw binnengekomen"-badge: verschijnt tot 21 dagen na data-binnen en verdwijnt daarna
+    // "Nieuw binnengekomen"-badge: verschijnt tot 42 dagen (6 weken) na data-binnen en verdwijnt daarna
     // vanzelf. Neemt zolang hij actief is de plek in van de positieve badge (klasse + 1 blijft).
     cards.forEach(c => {
       const d = c.dataset.binnen;
       if (!d) return;
       const dagen = (Date.now() - new Date(d + 'T00:00:00').getTime()) / 86400000;
-      if (isNaN(dagen) || dagen < 0 || dagen > 21) return;
+      if (isNaN(dagen) || dagen < 0 || dagen > 42) return;
       const badges = c.querySelector('.badges');
       if (!badges) return;
       badges.querySelectorAll('.badge:not(.gold)').forEach(b => b.remove());
