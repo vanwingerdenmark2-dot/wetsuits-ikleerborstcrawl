@@ -62,6 +62,21 @@
   from = "/aquasphere-pursuit-heren-ml/*"
   to = "/"
   status = 301
+
+[[redirects]]
+  from = "/orca-s7-heren-mt/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/zone3-vision-heren-sm/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/deboer-floh-2-0-heren-lt/*"
+  to = "/"
+  status = 301
 [[headers]]
   for = "/*"
   [headers.values]
